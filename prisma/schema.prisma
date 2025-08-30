@@ -1,0 +1,99 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  username     String        @unique
+  userTypeId   Int
+  userType     UserType      @relation(fields: [userTypeId], references: [id])
+  email        String        @unique
+  password     String
+  authToken    String?
+  refreshToken String?
+  createdAt    DateTime      @default(now())
+  transactions Transaction[]
+  customers    Customer[]
+}
+
+model UserType {
+  id    Int    @id @default(autoincrement())
+  name  String // admin,manager,user  
+  users User[]
+}
+
+model Customer {
+  id             Int          @id @default(autoincrement())
+  name           String
+  surname        String
+  email          String       @unique
+  phone          String?
+  createdAt      DateTime     @default(now())
+  address        String?
+  customerTypeId Int
+  customerType   CustomerType @relation(fields: [customerTypeId], references: [id])
+  userId         Int
+  user           User          @relation(fields: [userId], references: [id])
+}
+
+model CustomerType {
+  id        Int        @id @default(autoincrement())
+  name      String // vip/ no vip
+  customers Customer[]
+}
+
+
+model Product {
+  id                 Int                  @id @default(autoincrement())
+  name               String
+  price              Float
+  productTypeId      Int
+  productType        ProductType          @relation(fields: [productTypeId], references: [id])
+  TransactionProduct TransactionProduct[]
+}
+
+model ProductType{
+  id         Int        @id @default(autoincrement())
+  name       String // elektronik, giyim, ev eşyası
+  products   Product[]
+}
+
+model Transaction {
+  id                 Int                  @id @default(autoincrement())
+  userId             Int
+  name               String
+  user               User                 @relation(fields: [userId], references: [id])
+  productId          Int
+  quantity           Int
+  transactionTypeId  Int
+  transactionType    TransactionType      @relation(fields: [transactionTypeId], references: [id])
+  createdAt          DateTime             @default(now())
+  TransactionProduct TransactionProduct[]
+}
+
+model TransactionType {
+  id          Int           @id @default(autoincrement())
+  name        String
+  transaction Transaction[]
+}
+
+model TransactionProduct {
+  id            Int         @id @default(autoincrement())
+  transactionId Int
+  transaction   Transaction @relation(fields: [transactionId], references: [id])
+  productId     Int
+  product       Product     @relation(fields: [productId], references: [id])
+  quantity      Int
+}
