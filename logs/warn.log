@@ -1,0 +1,201 @@
+[2025-08-31 00:57:52] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 00:57:52] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:00:00] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:00:00] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:00:21] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:00:21] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:02:36] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:02:36] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:04:24] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:04:24] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-09-03 12:58:22] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "deneme@ex.com",
+    password: "$2b$10$gHsI6mJBCWSTX0aIyRz1aeRyfafc8UQpG50i3NiIEt5t31yo77LFW",
+    userTypeId: 1,
+    username: "deneme",
+    phone: 3242355,
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 12:59:28] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "deneme@ex.com",
+    password: "$2b$10$2p7vju8HinCy9MP3PVNeseA2zb3pphvaOGRNbP0S/D2GuTcd0pR/u",
+    userTypeId: 1,
+    username: "deneme",
+    phone: "qweqwe",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 12:59:37] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "deneme@ex.com",
+    password: "$2b$10$zo2IW6WBSdUz.A3BgOIOQOSk25z7c2nVqH9DMPAl5HT2n66KUHlJm",
+    userTypeId: 1,
+    username: "deneme",
+    phone: "3434",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 13:04:50] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "deneme@example.com",
+    password: "$2b$10$15TEKlMDZ6ySljT4qL5KNeTaOUX/GB5AraP9Lv6.pfcCUoxZkiN8e",
+    userTypeId: 1,
+    username: "deneme",
+    phone: "123123",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 13:06:59] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "vn@example.com",
+    password: "$2b$10$RWTrBbDZios5NGZeGdaG1e6RVmBDtGnuUVWhnA1YVVW0vyyGK1Rsi",
+    userTypeId: 1,
+    username: "vn",
+    phone: "123123",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 13:13:36] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "war@ease",
+    password: "$2b$10$Y3dYZTaQmsAHasVxRrA5jO6fDyNJIzNa449fOy1MrlrlpexYzSzV6",
+    userTypeId: 1,
+    username: "war",
+    phone: "12312",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 13:38:13] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-03 14:28:50] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-03 14:33:57] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (ema@ema)
+[2025-09-03 14:33:57] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-03 14:35:58] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:36:47] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (admin@example.com)
+[2025-09-03 14:36:47] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-03 14:41:17] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:41:20] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:41:22] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:57:40] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:57:46] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:57:50] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 15:27:28] [WARN]: [Auth]-[Service]-[getUserById]: User not found (8)
+[2025-09-03 15:27:28] [WARN]: [Auth]-[Controller]-[GetUserProfile]: Error occurred - Error: User not found

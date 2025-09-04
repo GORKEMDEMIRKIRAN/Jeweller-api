@@ -1,10 +1,11 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-async function seed() {
+
+export default async function seed() {
   //--------------------------------------------------------------------
   // userType add
-  const userTypes = ["admin", "manager", "user"];
+  const userTypes = ["user", "manager", "admin"];
   const userTypeObjs = [];
   for (const type of userTypes) {
     const userType = await prisma.userType.create({ data: { name: type } });
@@ -16,7 +17,7 @@ async function seed() {
       username: "admin",
       email: "admin@example.com",
       password: "123",
-      userTypeId: userTypeObjs[0]?.id ?? 1,
+      userTypeId: userTypeObjs[2]?.id ?? 9999,
     },
   });
   const user2 = await prisma.user.create({
@@ -24,7 +25,7 @@ async function seed() {
       username: "manager",
       email: "manager@example.com",
       password: "123",
-      userTypeId: userTypeObjs[1]?.id ?? 1,
+      userTypeId: userTypeObjs[1]?.id ?? 9999,
     },
   });
   const user3 = await prisma.user.create({
@@ -32,7 +33,15 @@ async function seed() {
       username: "user",
       email: "user@example.com",
       password: "123",
-      userTypeId: userTypeObjs[2]?.id ?? 1,
+      userTypeId: userTypeObjs[0]?.id ?? 9999,
+    },
+  });
+  const user4 = await prisma.user.create({
+    data: {
+      username: "admin-2",
+      email: "admin2@example.com",
+      password: "123",
+      userTypeId: userTypeObjs[2]?.id ?? 9999,
     },
   });
 
@@ -47,26 +56,24 @@ async function seed() {
   // customer
   await prisma.customer.create({
     data: {
-      name: "Gorkem",
-      surname: "gr",
-      email: "gorkem@example.com",
-      customerTypeId: customerTypeIds[0]?.id ?? 1,
+      nameSurname: "Jhon Aydin",
+      email: "normal@example.com",
+      customerTypeId: customerTypeIds[0]?.id ?? 0,
       userId: user1.id,
     },
   });
   await prisma.customer.create({
     data: {
-      name: "Gorkem",
-      surname: "gr",
-      email: "gorkem2@example.com",
-      customerTypeId: customerTypeIds[1]?.id ?? 1,
+      nameSurname: "Gorkem Aydin",
+      email: "vip@example.com",
+      customerTypeId: customerTypeIds[1]?.id ?? 0,
       userId: user2.id,
     },
   });
   //--------------------------------------------------------------------
 
   // productType ve product
-  const productTypeNames = ["Bilezik", "Kolye", "Küpe", "Künye", "Saat", "Yüzük"];
+  const productTypeNames = ["Bracelet", "Necklace", "Earring", "Signet Ring", "Watch", "Ring"];
   const productTypeObjs = [];
   for (const type of productTypeNames) {
     const pt = await prisma.productType.create({ data: { name: type } });
@@ -77,9 +84,11 @@ async function seed() {
   for (let i = 0; i < productTypeNames.length; i++) {
     const prod = await prisma.product.create({
       data: {
-        name: productTypeNames[i] ?? "",
-        productTypeId: productTypeObjs[i]?.id ?? 1,
-        price: 2500 + i * 500,
+        productTypeId: productTypeObjs[i]?.id ?? 0,
+        quantity:i,  // quantity i value
+        grossWeight:100, // 100 ons
+        unitPrice: 2500 + (i * 500),   // unit price
+        totalPrice: i * (2500 + (i * 500)),  // i value + unit price
       },
     });
     products.push(prod);
@@ -96,31 +105,22 @@ async function seed() {
   const transaction1 = await prisma.transaction.create({
     data: {
       userId: user1.id,
-      name: "Transaction 1",
-      quantity: 1,
-      productId: products[0]?.id ?? 1,
-      transactionTypeId: transactionTypeObjs[0]?.id ?? 1,
-      createdAt: new Date(),
+      customerId: customerTypeIds[0]?.id ?? 0,
+      transactionTypeId: transactionTypeObjs[0]?.id ?? 0,
     },
   });
   const transaction2 = await prisma.transaction.create({
     data: {
       userId: user2.id,
-      name: "Transaction 2",
-      quantity: 2,
-      productId: products[1]?.id ?? 1,
-      transactionTypeId: transactionTypeObjs[1]?.id ?? 1,
-      createdAt: new Date(),
+      customerId: customerTypeIds[1]?.id ?? 0,
+      transactionTypeId: transactionTypeObjs[1]?.id ?? 0,
     },
   });
   const transaction3 = await prisma.transaction.create({
     data: {
       userId: user3.id,
-      name: "Transaction 3",
-      quantity: 5,
-      productId: products[2]?.id ?? 1,
-      transactionTypeId: transactionTypeObjs[2]?.id ?? 1,
-      createdAt: new Date(),
+      customerId: customerTypeIds[1]?.id ?? 0,
+      transactionTypeId: transactionTypeObjs[2]?.id ?? 0,
     },
   });
   // ---------------------------------------------------------------------------
@@ -128,24 +128,24 @@ async function seed() {
   await prisma.transactionProduct.create({
     data: {
       transactionId: transaction1.id,
-      productId: products[0]?.id ?? 1,
+      productId: products[0]?.id ?? 0,
       quantity: 1,
     },
   });
   await prisma.transactionProduct.create({
     data: {
       transactionId: transaction2.id,
-      productId: products[1]?.id ?? 1,
+      productId: products[1]?.id ?? 0,
       quantity: 2,
     },
   });
   await prisma.transactionProduct.create({
     data: {
       transactionId: transaction3.id,
-      productId: products[2]?.id ?? 1,
+      productId: products[2]?.id ?? 0,
       quantity: 5,
     },
   });
 }
-export default seed;
+
 

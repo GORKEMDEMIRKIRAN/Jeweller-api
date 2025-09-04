@@ -1,29 +1,70 @@
+/**
+ * @openapi
+ * tags:
+ *   name: Auth
+ *   description: Authentication Transactions
+ */
+
 import { Router } from "express";
 import {
-  register,
   login,
   verifyEmail,
+  verifyPhone,
   logout,
-  getUserProfile,
-  updateUserProfile,
-  deleteUserAccount,
   forgotPassword,
-  resetPassword,
-  verifyPhone
+  resetPassword
 } from "../controllers/authController.js";
-import {requestAuth} from '../middlewares/authMiddleware.js';
+import {requestAuth} from "../middlewares/authMiddleware.js";
 
 const router = Router();
 
-router.post("/register", register);
-router.post("/login",requestAuth, login);
-router.post("/verify-email", requestAuth, verifyEmail);
-router.post("/logout", requestAuth, logout);
-router.get("/profile", requestAuth, getUserProfile);
-router.put("/profile", requestAuth, updateUserProfile);
-router.delete("/profile", requestAuth, deleteUserAccount);
-router.post("/forgot-password", requestAuth, forgotPassword);
-router.post("/reset-password", requestAuth, resetPassword);
-router.post("/verify-phone", requestAuth, verifyPhone);
+
+/**
+ * @openapi
+ * /auth/login:
+ *   post:
+ *     summary: User Login
+ */
+router.post("/login", login);
+
+/**
+ * @openapi
+ * /auth/verify-email:
+ *   post:
+ *     summary: E-mail Verification
+ */
+router.post("/verify-email", verifyEmail);
+
+/**
+ * @openapi
+ * /auth/logout:
+ *   post:
+ *     summary: User Logout
+ */
+router.post("/logout",requestAuth, logout);
+
+/**
+ * @openapi
+ * /auth/forgot-password/{id}:
+ *   post:
+ *     summary: Send Password Reset Request
+ */
+router.post("/forgot-password/:id", forgotPassword);
+
+/**
+ * @openapi
+ * /auth/reset-password/{id}:
+ *   post:
+ *     summary: Reset Password
+ */
+router.post("/reset-password/:id", resetPassword);
+
+/**
+ * @openapi
+ * /auth/verify-phone:
+ *   post:
+ *     summary: Phone Number Verification
+ */
+router.post("/verify-phone", verifyPhone);
 
 export default router;

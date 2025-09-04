@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  // output   = "../generated/prisma"
 }
 
 datasource db {
@@ -16,14 +16,15 @@ datasource db {
 
 model User {
   id           Int           @id @default(autoincrement())
-  username     String        @unique
+  username     String?
+  phone        Int?
+  email        String        @unique
+  password     String        @db.VarChar(255)
+  accessToken  String?       @db.VarChar(255)
+  refreshToken String?       @db.VarChar(255)
+  createdAt    DateTime      @default(now())
   userTypeId   Int
   userType     UserType      @relation(fields: [userTypeId], references: [id])
-  email        String        @unique
-  password     String
-  authToken    String?
-  refreshToken String?
-  createdAt    DateTime      @default(now())
   transactions Transaction[]
   customers    Customer[]
 }
@@ -36,8 +37,7 @@ model UserType {
 
 model Customer {
   id             Int          @id @default(autoincrement())
-  name           String
-  surname        String
+  nameSurname    String
   email          String       @unique
   phone          String?
   createdAt      DateTime     @default(now())
@@ -45,7 +45,8 @@ model Customer {
   customerTypeId Int
   customerType   CustomerType @relation(fields: [customerTypeId], references: [id])
   userId         Int
-  user           User          @relation(fields: [userId], references: [id])
+  user           User         @relation(fields: [userId], references: [id])
+  transactions   Transaction[]
 }
 
 model CustomerType {
@@ -54,38 +55,41 @@ model CustomerType {
   customers Customer[]
 }
 
-
 model Product {
   id                 Int                  @id @default(autoincrement())
-  name               String
-  price              Float
+  unitPrice          Float?
+  totalPrice         Float?
+  quantity           Int
+  grossWeight        Float?
+  netWeight          Float?
+  images             String[]
   productTypeId      Int
   productType        ProductType          @relation(fields: [productTypeId], references: [id])
-  TransactionProduct TransactionProduct[]
-}
-
-model ProductType{
-  id         Int        @id @default(autoincrement())
-  name       String // elektronik, giyim, ev eşyası
-  products   Product[]
-}
-
-model Transaction {
-  id                 Int                  @id @default(autoincrement())
-  userId             Int
-  name               String
-  user               User                 @relation(fields: [userId], references: [id])
-  productId          Int
-  quantity           Int
-  transactionTypeId  Int
-  transactionType    TransactionType      @relation(fields: [transactionTypeId], references: [id])
   createdAt          DateTime             @default(now())
   TransactionProduct TransactionProduct[]
 }
 
+model ProductType {
+  id       Int       @id @default(autoincrement())
+  name     String // yüzük,kolye,küpe
+  products Product[]
+}
+
+model Transaction {
+  id                    Int                  @id @default(autoincrement())
+  userId                Int
+  user                  User                 @relation(fields: [userId], references: [id])
+  customerId            Int
+  customer              Customer             @relation(fields: [customerId], references: [id])
+  transactionTypeId     Int
+  transactionType       TransactionType      @relation(fields: [transactionTypeId], references: [id])
+  createdAt             DateTime             @default(now())
+  TransactionProduct    TransactionProduct[]
+}
+
 model TransactionType {
   id          Int           @id @default(autoincrement())
-  name        String
+  name        String // sale,purchase,deposit,limit
   transaction Transaction[]
 }
 

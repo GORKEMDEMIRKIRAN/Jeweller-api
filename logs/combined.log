@@ -1,0 +1,342 @@
+[2025-08-31 00:57:52] [error]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 00:57:52] [error]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:00:00] [error]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:00:00] [error]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:00:21] [error]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:00:21] [error]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:02:36] [error]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:02:36] [error]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:04:24] [error]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-08-31 01:04:24] [error]: Login: Error occurred - PrismaClientUnknownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
+[2025-09-03 12:58:21] [info]: [Auth]-[Service]-[registerUser]: Registering user (deneme@ex.com)
+[2025-09-03 12:58:21] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (deneme@ex.com)
+[2025-09-03 12:58:22] [info]: [Auth]-[Service]-[registerUser]: User registered successfully (deneme@ex.com)
+[2025-09-03 12:58:22] [info]: [Auth]-[Repository]-[createUser]: Creating user in DB (deneme@ex.com)
+[2025-09-03 12:58:22] [error]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "deneme@ex.com",
+    password: "$2b$10$gHsI6mJBCWSTX0aIyRz1aeRyfafc8UQpG50i3NiIEt5t31yo77LFW",
+    userTypeId: 1,
+    username: "deneme",
+    phone: 3242355,
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 12:59:28] [info]: [Auth]-[Service]-[registerUser]: Registering user (deneme@ex.com)
+[2025-09-03 12:59:28] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (deneme@ex.com)
+[2025-09-03 12:59:28] [info]: [Auth]-[Service]-[registerUser]: User registered successfully (deneme@ex.com)
+[2025-09-03 12:59:28] [info]: [Auth]-[Repository]-[createUser]: Creating user in DB (deneme@ex.com)
+[2025-09-03 12:59:28] [error]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "deneme@ex.com",
+    password: "$2b$10$2p7vju8HinCy9MP3PVNeseA2zb3pphvaOGRNbP0S/D2GuTcd0pR/u",
+    userTypeId: 1,
+    username: "deneme",
+    phone: "qweqwe",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 12:59:36] [info]: [Auth]-[Service]-[registerUser]: Registering user (deneme@ex.com)
+[2025-09-03 12:59:36] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (deneme@ex.com)
+[2025-09-03 12:59:37] [info]: [Auth]-[Service]-[registerUser]: User registered successfully (deneme@ex.com)
+[2025-09-03 12:59:37] [info]: [Auth]-[Repository]-[createUser]: Creating user in DB (deneme@ex.com)
+[2025-09-03 12:59:37] [error]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "deneme@ex.com",
+    password: "$2b$10$zo2IW6WBSdUz.A3BgOIOQOSk25z7c2nVqH9DMPAl5HT2n66KUHlJm",
+    userTypeId: 1,
+    username: "deneme",
+    phone: "3434",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 13:04:48] [info]: [Auth]-[Service]-[registerUser]: Registering user (deneme@example.com)
+[2025-09-03 13:04:48] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (deneme@example.com)
+[2025-09-03 13:04:50] [info]: [Auth]-[Service]-[registerUser]: User registered successfully (deneme@example.com)
+[2025-09-03 13:04:50] [info]: [Auth]-[Repository]-[createUser]: Creating user in DB (deneme@example.com)
+[2025-09-03 13:04:50] [error]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "deneme@example.com",
+    password: "$2b$10$15TEKlMDZ6ySljT4qL5KNeTaOUX/GB5AraP9Lv6.pfcCUoxZkiN8e",
+    userTypeId: 1,
+    username: "deneme",
+    phone: "123123",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 13:06:59] [info]: [Auth]-[Service]-[registerUser]: Registering user (vn@example.com)
+[2025-09-03 13:06:59] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (vn@example.com)
+[2025-09-03 13:06:59] [info]: [Auth]-[Service]-[registerUser]: User registered successfully (vn@example.com)
+[2025-09-03 13:06:59] [info]: [Auth]-[Repository]-[createUser]: Creating user in DB (vn@example.com)
+[2025-09-03 13:06:59] [error]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "vn@example.com",
+    password: "$2b$10$RWTrBbDZios5NGZeGdaG1e6RVmBDtGnuUVWhnA1YVVW0vyyGK1Rsi",
+    userTypeId: 1,
+    username: "vn",
+    phone: "123123",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 13:13:34] [info]: [Auth]-[Service]-[registerUser]: Registering user (war@ease)
+[2025-09-03 13:13:34] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (war@ease)
+[2025-09-03 13:13:36] [info]: [Auth]-[Service]-[registerUser]: User registered successfully (war@ease)
+[2025-09-03 13:13:36] [info]: [Auth]-[Repository]-[createUser]: Creating user in DB (war@ease)
+[2025-09-03 13:13:36] [error]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    email: "war@ease",
+    password: "$2b$10$Y3dYZTaQmsAHasVxRrA5jO6fDyNJIzNa449fOy1MrlrlpexYzSzV6",
+    userTypeId: 1,
+    username: "war",
+    phone: "12312",
+    ~~~~~
+?   id?: Int,
+?   accessToken?: String | Null,
+?   refreshToken?: String | Null,
+?   createdAt?: DateTime,
+?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
+?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  }
+}
+
+Unknown argument `phone`. Available options are marked with ?.
+[2025-09-03 13:36:51] [info]: [Auth]-[Service]-[registerUser]: Registering user (ema@ema)
+[2025-09-03 13:36:51] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (ema@ema)
+[2025-09-03 13:36:53] [info]: [Auth]-[Service]-[registerUser]: User registered successfully (ema@ema)
+[2025-09-03 13:36:53] [info]: [Auth]-[Repository]-[createUser]: Creating user in DB (ema@ema)
+[2025-09-03 13:36:53] [info]: [Auth]-[Controller]-[Register]: User created in DB (ema@ema)
+[2025-09-03 13:36:53] [info]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (ema@ema)
+[2025-09-03 13:36:53] [info]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (ema@ema)
+[2025-09-03 13:36:53] [info]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (ema@ema)
+[2025-09-03 13:36:53] [info]: [Auth]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJlbWFAZW1hIiwiaWF0IjoxNzU2ODk1ODEzLCJleHAiOjE3NTY5ODIyMTN9.bAj0fWWuRndOHDUUwpje4T41MLuvYhlscoSzjJoQroE,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJlbWFAZW1hIiwiaWF0IjoxNzU2ODk1ODEzLCJleHAiOjE3NTc1MDA2MTN9.8oDKYFiEOVfk8GUee8iQTLjbYcf6v6cLmGZ_HRZ7pgg)
+[2025-09-03 13:36:53] [info]: [Auth]-[Service]-[updateUser]: Updating user (5)
+[2025-09-03 13:36:53] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
+[2025-09-03 13:36:53] [info]: [Auth]-[Service]-[updateUser]: User found (5)
+[2025-09-03 13:36:53] [info]: [Auth]-[Repository]-[updateUser]:Updating user in DB (5)
+[2025-09-03 13:36:54] [info]: [Auth]-[Controller]-[Register]: User registered successfully (ema@ema)
+[2025-09-03 13:38:13] [warn]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-03 14:28:50] [warn]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-03 14:33:55] [info]: [Auth]-[Service]-[loginUser]: Logging in user (ema@ema)
+[2025-09-03 14:33:55] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (ema@ema)
+[2025-09-03 14:33:57] [warn]: [Auth]-[Service]-[loginUser]: Invalid password (ema@ema)
+[2025-09-03 14:33:57] [error]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-03 14:35:05] [info]: [Auth]-[Service]-[loginUser]: Logging in user (ema@ema)
+[2025-09-03 14:35:05] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (ema@ema)
+[2025-09-03 14:35:05] [info]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (ema@ema)
+[2025-09-03 14:35:05] [info]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (ema@ema)
+[2025-09-03 14:35:05] [info]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (ema@ema)
+[2025-09-03 14:35:05] [info]: [Auth]-[Service]-[updateUser]: Updating user (5)
+[2025-09-03 14:35:05] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
+[2025-09-03 14:35:05] [info]: [Auth]-[Service]-[updateUser]: User found (5)
+[2025-09-03 14:35:05] [info]: [Auth]-[Repository]-[updateUser]:Updating user in DB (5)
+[2025-09-03 14:35:06] [info]: [Auth]-[Controller]-[Login]: User logged in successfully (ema@ema)
+[2025-09-03 14:35:58] [error]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:36:47] [info]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-03 14:36:47] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (admin@example.com)
+[2025-09-03 14:36:47] [warn]: [Auth]-[Service]-[loginUser]: Invalid password (admin@example.com)
+[2025-09-03 14:36:47] [error]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-03 14:40:48] [info]: [Auth]-[Service]-[registerUser]: Registering user (grkm-admin@example.com)
+[2025-09-03 14:40:48] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (grkm-admin@example.com)
+[2025-09-03 14:40:50] [info]: [Auth]-[Service]-[registerUser]: User registered successfully (grkm-admin@example.com)
+[2025-09-03 14:40:50] [info]: [Auth]-[Repository]-[createUser]: Creating user in DB (grkm-admin@example.com)
+[2025-09-03 14:40:50] [info]: [Auth]-[Controller]-[Register]: User created in DB (grkm-admin@example.com)
+[2025-09-03 14:40:50] [info]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (grkm-admin@example.com)
+[2025-09-03 14:40:50] [info]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (grkm-admin@example.com)
+[2025-09-03 14:40:50] [info]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (grkm-admin@example.com)
+[2025-09-03 14:40:50] [info]: [Auth]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJncmttLWFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzU2ODk5NjUwLCJleHAiOjE3NTY5ODYwNTB9.3XuAHVRYI8hGYNJUCAJ0pNj1kpCII7EHKQwVxbeM_lM,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJncmttLWFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzU2ODk5NjUwLCJleHAiOjE3NTc1MDQ0NTB9.7dvdi3dgKrIuMPcz1fRvUe2nZLg-oZSs0mndSsAKx0I)
+[2025-09-03 14:40:50] [info]: [Auth]-[Service]-[updateUser]: Updating user (6)
+[2025-09-03 14:40:50] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
+[2025-09-03 14:40:50] [info]: [Auth]-[Service]-[updateUser]: User found (6)
+[2025-09-03 14:40:50] [info]: [Auth]-[Repository]-[updateUser]:Updating user in DB (6)
+[2025-09-03 14:40:51] [info]: [Auth]-[Controller]-[Register]: User registered successfully (grkm-admin@example.com)
+[2025-09-03 14:41:17] [error]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:41:20] [error]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:41:22] [error]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:57:03] [info]: [Auth]-[Service]-[loginUser]: Logging in user (grkm-admin@example.com)
+[2025-09-03 14:57:03] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (grkm-admin@example.com)
+[2025-09-03 14:57:05] [info]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (grkm-admin@example.com)
+[2025-09-03 14:57:05] [info]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (grkm-admin@example.com)
+[2025-09-03 14:57:05] [info]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (grkm-admin@example.com)
+[2025-09-03 14:57:05] [info]: [Auth]-[Service]-[updateUser]: Updating user (6)
+[2025-09-03 14:57:05] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
+[2025-09-03 14:57:05] [info]: [Auth]-[Service]-[updateUser]: User found (6)
+[2025-09-03 14:57:05] [info]: [Auth]-[Repository]-[updateUser]:Updating user in DB (6)
+[2025-09-03 14:57:05] [info]: [Auth]-[Controller]-[Login]: User logged in successfully (grkm-admin@example.com)
+[2025-09-03 14:57:40] [error]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:57:46] [error]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 14:57:50] [error]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
+[2025-09-03 15:00:28] [info]: [Auth]-[Service]-[loginUser]: Logging in user (grkm-admin@example.com)
+[2025-09-03 15:00:28] [info]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (grkm-admin@example.com)
+[2025-09-03 15:00:30] [info]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (grkm-admin@example.com)
+[2025-09-03 15:00:30] [info]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (grkm-admin@example.com)
+[2025-09-03 15:00:30] [info]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (grkm-admin@example.com)
+[2025-09-03 15:00:30] [info]: [Auth]-[Service]-[updateUser]: Updating user (6)
+[2025-09-03 15:00:30] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
+[2025-09-03 15:00:30] [info]: [Auth]-[Service]-[updateUser]: User found (6)
+[2025-09-03 15:00:30] [info]: [Auth]-[Repository]-[updateUser]:Updating user in DB (6)
+[2025-09-03 15:00:30] [info]: [Auth]-[Controller]-[Login]: User logged in successfully (grkm-admin@example.com)
+[2025-09-03 15:00:56] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:00:56] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:01:09] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:01:09] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:01:12] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:01:12] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:01:24] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:01:24] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:01:27] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:01:27] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:14:07] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:14:07] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:14:08] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:14:08] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:14:09] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:14:09] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:14:21] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:14:21] [info]: [Auth]-[Service]-[getUserById]: Fetching user (6)
+[2025-09-03 15:14:21] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
+[2025-09-03 15:14:22] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:14:32] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:14:32] [info]: [Auth]-[Service]-[getUserById]: Fetching user (6)
+[2025-09-03 15:14:32] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
+[2025-09-03 15:14:32] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:14:34] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:14:34] [info]: [Auth]-[Service]-[getUserById]: Fetching user (6)
+[2025-09-03 15:14:34] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
+[2025-09-03 15:14:34] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
+[2025-09-03 15:17:00] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:17:00] [info]: [Auth]-[Service]-[getUserById]: Fetching user (2)
+[2025-09-03 15:17:00] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (2)
+[2025-09-03 15:17:02] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (2)
+[2025-09-03 15:17:07] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:17:07] [info]: [Auth]-[Service]-[getUserById]: Fetching user (5)
+[2025-09-03 15:17:07] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
+[2025-09-03 15:17:07] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (5)
+[2025-09-03 15:17:13] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:17:13] [info]: [Auth]-[Service]-[getUserById]: Fetching user (3)
+[2025-09-03 15:17:13] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (3)
+[2025-09-03 15:17:13] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (3)
+[2025-09-03 15:25:35] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:25:35] [info]: [Auth]-[Service]-[getUserById]: Fetching user (3)
+[2025-09-03 15:25:35] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (3)
+[2025-09-03 15:25:37] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (3)
+[2025-09-03 15:27:24] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:27:24] [info]: [Auth]-[Service]-[getUserById]: Fetching user (5)
+[2025-09-03 15:27:24] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
+[2025-09-03 15:27:25] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (5)
+[2025-09-03 15:27:28] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:27:28] [info]: [Auth]-[Service]-[getUserById]: Fetching user (8)
+[2025-09-03 15:27:28] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (8)
+[2025-09-03 15:27:28] [warn]: [Auth]-[Service]-[getUserById]: User not found (8)
+[2025-09-03 15:27:28] [error]: [Auth]-[Controller]-[GetUserProfile]: Error occurred - Error: User not found
+[2025-09-03 15:27:31] [info]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-03 15:27:31] [info]: [Auth]-[Service]-[getUserById]: Fetching user (5)
+[2025-09-03 15:27:31] [info]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
+[2025-09-03 15:27:31] [info]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (5)

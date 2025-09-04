@@ -1,27 +1,26 @@
 
+import bcrypt from "bcrypt";
 
 
-import {PrismaClient} from "@prisma/client";
-const prisma = new PrismaClient();
+import logger from "../utils/logger.js";
+import * as authRepository from "../repositories/authRepository.js";
+import * as userRepository from "../repositories/userRepository.js";
 
-export async function createUser(data: { email: string; password: string }) {
 
-    // Şifre hashleme, email kontrolü vs. burada yapılabilir
-    
-    const user = await prisma.user.create({
-        data: {
-            email: data.email,
-            password: data.password
-        }
-    });
-    return user;
-}
 
-export async function findUserByEmail(email: string) {
-    return prisma.user.findUnique({
-        where: {
-            email: email
-        }
-    });
+
+export async function loginUser(email: string, password: string) {
+  logger.info(`[Auth]-[Service]-[loginUser]: Logging in user (${email})`);
+  const user = await userRepository.findUserByEmail(email);
+  if (!user) {
+    logger.warn(`[Auth]-[Service]-[loginUser]: User not found (${email})`);
+    throw new Error("user not found");
+  }
+  const isValid = await bcrypt.compare(password, user.password);
+  if (!isValid) {
+    logger.warn(`[Auth]-[Service]-[loginUser]: Invalid password (${email})`);
+    throw new Error("Invalid password");
+  }
+  return user;
 }
 
