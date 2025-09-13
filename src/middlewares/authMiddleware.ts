@@ -2,9 +2,10 @@ import type { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import type{JwtPayload} from '../types/express.js';
 import logger from "../utils/logger.js";
+import redis from "../utils/redisClient.js";
 
 
-export function requestAuth(req: Request, res: Response, next: NextFunction) {
+export async function requestAuth(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers.authorization;
   const secret = process.env.JWT_SECRET;
   if (!authHeader) {
@@ -28,10 +29,24 @@ export function requestAuth(req: Request, res: Response, next: NextFunction) {
     return res.status(401).json({ message: "No token provided" });
   }
 
+  
+  // ADDED BLACKLIST CHECK
+  try {
+    const isBlacklisted = await redis.get(`bl_${token}`);
+    if (isBlacklisted) {
+      logger.warn(`[Auth]-[Middleware]-[RequestAuth]: Token is blacklisted`);
+      return res.status(401).json({ message: "Token is blacklisted" });
+    }
+  } catch (err) {
+    logger.error(`[Auth]-[Middleware]-[RequestAuth]: Redis blacklist check failed - ${err}`);
+    // İstersen burada 500 dönebilirsin; şu an devam ediyor
+  }
+
+
   try {
     const payload = jwt.verify(token, secret as string);
     logger.info(`[Auth]-[Middleware]-[RequestAuth]: Token verified successfully`);
-    if (typeof payload === "object" &&payload &&"id" in payload &&"email" in payload) {
+    if (typeof payload === "object" && payload && "id" in payload && "email" in payload) {
       req.user = payload as JwtPayload;
       next();
     } else {

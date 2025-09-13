@@ -1,9 +1,3 @@
-/**
- * @openapi
- * tags:
- *  name: inventory
- *  description: Inventory management operations
- */
 
 import { Router } from "express";
 import {

@@ -3,8 +3,9 @@
 
 import type { Request, Response } from "express";
 import logger from "../utils/logger.js";
+import * as token from '../config/token.js';
 import * as userService from "../services/userService.js";
-import * as tokenService from '../services/tokenService.js';
+import * as authService from "../services/authService.js";
 import type { RegisterUserInputProps ,UpdateUserInputProps} from "../types/userTypes.js";
 
 
@@ -14,6 +15,8 @@ import type { RegisterUserInputProps ,UpdateUserInputProps} from "../types/userT
  * @openapi
  * /user/register:
  *   post:
+ *     tags:
+ *       - User
  *     summary: User Registration
  *     requestBody:
  *       required: true
@@ -21,9 +24,11 @@ import type { RegisterUserInputProps ,UpdateUserInputProps} from "../types/userT
  *         application/json:
  *           schema:
  *             type: object
+ *             required: [email, password]
  *             properties:
  *               email:
  *                 type: string
+ *                 format: email
  *               password:
  *                 type: string
  *               username:
@@ -52,9 +57,10 @@ export async function register(req: Request, res: Response) {
     const user:any= await userService.registerUser({
       ...registerData,
       userTypeId: 1,
+      password: registerData.password,
     });
     logger.info(`[User]-[Controller]-[Register]: User created in DB (${registerData.email})`);
-    const tokens = tokenService.generateTokens({
+    const tokens = token.generateTokens({
       id: user.id,
       email: user.email,
     });
@@ -62,6 +68,8 @@ export async function register(req: Request, res: Response) {
     await userService.updateUser(user.id, {
       refreshToken: tokens.refreshToken,
     });
+    await authService.sendEmail(user.email);
+    logger.info(`[User]-[Controller]-[Register]: Verification email sent (${registerData.email})`);
     logger.info(`[User]-[Controller]-[Register]: User registered successfully (${registerData.email})`);
     // respond with success message
     res.status(201).json({
@@ -85,10 +93,14 @@ export async function register(req: Request, res: Response) {
  * @openapi
  * /user/profile/{id}:
  *   get:
- *     summary: Get User Profile
+ *     tags:
+ *        - User
+ *     summary: Get User Profil
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
- *         number: id
+ *         name: id
  *         required: true
  *         schema:
  *           type: number
@@ -97,6 +109,8 @@ export async function register(req: Request, res: Response) {
  *         description: Profile retrieved successfully
  *       401:
  *         description: UserId is required
+ *       404:
+ *         description: User not found
  *       500:
  *         description: Internal server error
  */
@@ -124,15 +138,13 @@ export async function getUserProfile(req: Request, res: Response) {
 
 /**
  * @openapi
- * /users:
+ * /user/:
  *   get:
- *     summary: Get Users 
- *     parameters:
- *       - in: query
- *         name: id
- *         required: true
- *         schema:
- *           type: number
+ *     tags:
+ *        - User
+ *     summary: Get All Users 
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Users retrieved successfully
@@ -141,10 +153,11 @@ export async function getUserProfile(req: Request, res: Response) {
  */
 export async function getAllUsers(req:Request,res:Response){
   try{
-    const users:any=await userService.getAllUsers();
-    const {password,refreshToken,accessToken,...rest}=users;
+    const users=await userService.getAllUsers();
+    const usersWithoutSensitiveInfo = users.map(({password,refreshToken,accessToken,...rest})=>rest);
+    console.log(usersWithoutSensitiveInfo);
     logger.info(`[User]-[Controller]-[GetAllUsers]: All users retrieved successfully`);
-    res.status(200).json(rest);
+    res.status(200).json(usersWithoutSensitiveInfo);
   }catch(error){
     logger.error(`[User]-[Controller]-[GetAllUsers]: Error occurred - ${error}`);
     res.status(500).json({ message: "Internal server error" });
@@ -154,8 +167,16 @@ export async function getAllUsers(req:Request,res:Response){
 /**
  * @openapi
  * /user/profile/{id}:
- *   update:
+ *   put:
+ *     tags:
+ *       - User
  *     summary: Update User Profile
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
  *     requestBody:
  *       required: true
  *       content:
@@ -167,16 +188,10 @@ export async function getAllUsers(req:Request,res:Response){
  *                 type: string
  *               password:
  *                 type: string
- *               userTypeId:
- *                 type: number
  *               username:
  *                 type: string
  *               phone:
- *                 type: string
- *               accessToken:
- *                  type: string
- *               refreshToken:
- *                  type: string
+ *                 type: number
  *     responses:
  *       200:
  *         description: Profile updated successfully
@@ -219,36 +234,45 @@ export async function updateUserProfile(req: Request, res: Response) {
 
 /**
  * @openapi
- * /user/profile/{id}:
+ * /user/profile:
  *   delete:
+ *     tags:
+ *       - User
  *     summary: Delete User Profile
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
  *         schema:
- *           type: string
+ *           type: number
  *     responses:
  *       200:
  *         description: Profile deleted successfully
  *       401:
  *         description: Unauthorized
- *      404:
- *          description: User not found
- *      500:
- *          description: Interval server error
+ *       404:
+ *         description: User not found
+ *       500:
+ *         description: Internal server error
  */
 export async function deleteUserAccount(req: Request, res: Response) {
-  if (!req.user) {
-    logger.warn(
-      `[User]-[Controller]-[DeleteUserAccount]: Unauthorized, Token missing`
-    );
-    return res.status(401).json({ message: "Unauthorized" });
+  // if (!req.user) {
+  //   logger.warn(
+  //     `[User]-[Controller]-[DeleteUserAccount]: Unauthorized, Token missing`
+  //   );
+  //   return res.status(401).json({ message: "Unauthorized" });
+  // }
+  const userId=Number(req.params.id);
+  if(!userId){
+    logger.warn(`[User]-[Controller]-[DeleteUserAccount]: UserId missing (${userId})`);
+    return res.status(401).json({ message: "UserId is required" });
   }
   try {
-    await userService.deleteUser(req.user.id);
+    await userService.deleteUser(userId);
     logger.info(
-      `[User]-[Controller]-[DeleteUserAccount]: User account deleted successfully (${req.user.id})`
+      `[User]-[Controller]-[DeleteUserAccount]: User account deleted successfully (${userId})`
     );
     res.status(200).json({ message: "User account deleted successfully" });
   } catch (error) {
@@ -261,3 +285,4 @@ export async function deleteUserAccount(req: Request, res: Response) {
     res.status(500).json({ message: "Internal server error" });
   }
 }
+

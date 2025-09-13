@@ -10,7 +10,11 @@ dotenv.config();
 
 const appRoot = __dirname;
 
-
 export const config = {
     port: process.env.PORT || 3000  
 };
+
+// random 6 digit code generator
+export function generateSixDigitCode(): string {
+  return Math.floor(100000 + Math.random() * 900000).toString();
+}

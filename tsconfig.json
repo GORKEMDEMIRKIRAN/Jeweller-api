@@ -14,6 +14,10 @@
     // "types": ["node"],
     // and npm install -D @types/node
 
+
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     // Other Outputs
     "sourceMap": true,
     "declaration": true,

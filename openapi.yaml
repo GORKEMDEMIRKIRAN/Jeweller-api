@@ -1,0 +1,107 @@
+components:
+  schemas:
+    CreateProductInputProps:
+      type: object
+      properties:
+        unitPrice:
+          type: number
+        totalPrice:
+          type: number
+        quantity:
+          type: number
+        grossWeight:
+          type: number
+        netWeight:
+          type: number
+        images:
+          type: array
+          items:
+            type: string
+        productTypeId:
+          type: integer
+      required:
+        - unitPrice
+        - quantity
+        - grossWeight
+        - netWeight
+        - images
+        - productTypeId
+
+    UpdateProductInputProps:
+      type: object
+      properties:
+        unitPrice:
+          type: number
+        totalPrice:
+          type: number
+        quantity:
+          type: number
+        grossWeight:
+          type: number
+        netWeight:
+          type: number
+        images:
+          type: array
+          items:
+            type: string
+        productTypeId:
+          type: integer
+
+    CreateCustomerInputProps:
+      type: object
+      properties:
+        nameSurname:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        address:
+          type: string
+        customerTypeId:
+          type: integer
+        userId:
+          type: integer
+      required:
+        - nameSurname
+        - email
+        - phone
+        - address
+        - customerTypeId
+        - userId
+
+    UpdateCustomerInputProps:
+      type: object
+      properties:
+        nameSurname:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        address:
+          type: string
+        customerTypeId:
+          type: integer
+        userId:
+          type: integer
+
+    CreateAllTransactionInputProps:
+      type: object
+      properties:
+        userId:
+          type: integer
+        customerId:
+          type: integer
+        customer:
+          $ref: '#/components/schemas/CreateCustomerInputProps'
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateProductInputProps'
+        transactionTypeId:
+          type: integer
+      required:
+        - userId
+        - products
+

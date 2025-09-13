@@ -7,7 +7,7 @@ import * as productRepository from '../repositories/productRepository.js'
 import type {CreateProductInputProps,UpdateProductInputProps} from '../types/productTypes.js';
 
 
-export async function getAllProducts(){
+export async function allProducts(){
     try{
         logger.info('[Product]-[Service]-[getAllProducts]: Fetching all products');
         return await productRepository.findAllProducts();
@@ -17,7 +17,7 @@ export async function getAllProducts(){
     }
 }
 
-export async function getProductById(id:number){
+export async function productById(id:number){
     try{
         logger.info(`[Product]-[Service]-[getProductById]: Fetching product by id (${id})`);
         const product=await productRepository.findProductById(id);
@@ -52,5 +52,15 @@ export async function updateProduct(id:number,updateProductData:UpdateProductInp
     }catch(error){
         logger.error(`[Product]-[Service]-[updateProduct]:Error updating product (${id}) - ${error}`);
         throw new Error('Error updating product');
+    }
+}
+
+export async function deleteProductById(id:number){
+    try{
+        logger.info(`[Product]-[Service]-[deleteProductById]: Deleting product by id (${id})`);
+        return await productRepository.deleteProductById(id);
+    }catch(error){
+        logger.error(`[Product]-[Service]-[deleteProductById]: Error deleting product by id (${id}) - ${error}`);
+        throw new Error("Error deleting product");
     }
 }

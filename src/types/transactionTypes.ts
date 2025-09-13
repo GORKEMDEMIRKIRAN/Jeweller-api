@@ -26,5 +26,6 @@ export type CreateAllTransactionInputProps={
     customerId?:number,
     customer?:CreateCustomerInputProps,
     products:CreateProductInputProps[],
-    transactionTypeId:number,
+    transactionTypeId?:number,
 }
+

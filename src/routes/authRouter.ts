@@ -2,69 +2,37 @@
  * @openapi
  * tags:
  *   name: Auth
- *   description: Authentication Transactions
+ *   description: Authentication
  */
 
 import { Router } from "express";
 import {
   login,
-  verifyEmail,
-  verifyPhone,
+  loginPhone,
+  verificationEmail,
+  sendVerificationEmail,
+  verificationPhone,
+  sendVerificationPhone,
   logout,
   forgotPassword,
-  resetPassword
+  resetPassword,
 } from "../controllers/authController.js";
-import {requestAuth} from "../middlewares/authMiddleware.js";
+import { requestAuth } from "../middlewares/authMiddleware.js";
 
 const router = Router();
 
-
-/**
- * @openapi
- * /auth/login:
- *   post:
- *     summary: User Login
- */
 router.post("/login", login);
+router.post("/login-phone", loginPhone);
+router.post("/logout", requestAuth, logout);
 
-/**
- * @openapi
- * /auth/verify-email:
- *   post:
- *     summary: E-mail Verification
- */
-router.post("/verify-email", verifyEmail);
+router.post("/verify-email",sendVerificationEmail);
+router.get("/verify-email",verificationEmail);
 
-/**
- * @openapi
- * /auth/logout:
- *   post:
- *     summary: User Logout
- */
-router.post("/logout",requestAuth, logout);
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password", resetPassword);
 
-/**
- * @openapi
- * /auth/forgot-password/{id}:
- *   post:
- *     summary: Send Password Reset Request
- */
-router.post("/forgot-password/:id", forgotPassword);
+router.post("/send-verification-phone", requestAuth, sendVerificationPhone);
+router.post("/verify-phone", requestAuth, verificationPhone);
 
-/**
- * @openapi
- * /auth/reset-password/{id}:
- *   post:
- *     summary: Reset Password
- */
-router.post("/reset-password/:id", resetPassword);
-
-/**
- * @openapi
- * /auth/verify-phone:
- *   post:
- *     summary: Phone Number Verification
- */
-router.post("/verify-phone", verifyPhone);
 
 export default router;

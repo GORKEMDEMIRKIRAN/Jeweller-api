@@ -2,7 +2,6 @@
 
 
 import logger from '../utils/logger.js';
-
 import * as customerRepository from '../repositories/customerRepository.js';
 import type {CreateCustomerInputProps,UpdateCustomerInputProps} from '../types/customerTypes.js';
 
@@ -59,6 +58,22 @@ export async function updateCustomer(id:number,updateCustomerData:UpdateCustomer
         return await customerRepository.updateCustomer(id,updateCustomerData);
     }catch(error){
         logger.error(`[Customer]-[Service]-[updateCustomer]: Error updating customer (${id}) - ${error}`)
+        throw new Error('Internal server error');
+    }
+}
+
+export async function deleteCustomerById(id:number){
+    try{
+        logger.info(`[Customer]-[Service]-[deleteCustomerById]: Deleting customer (${id})`)
+        const existingCustomer=await customerRepository.findCustomerById(id);
+        if(!existingCustomer){
+            logger.warn(`[Customer]-[Service]-[deleteCustomerById]: Customer not found (${id})`)
+            throw new Error('Customer not found');
+        }
+        await customerRepository.deleteCustomerById(id);
+        logger.info(`[Customer]-[Service]-[deleteCustomerById]: Deleted customer (${id})`)
+    }catch(error){
+        logger.error(`[Customer]-[Service]-[deleteCustomerById]: Error deleting customer (${id}) - ${error}`)
         throw new Error('Internal server error');
     }
 }

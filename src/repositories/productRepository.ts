@@ -2,10 +2,19 @@
 
 
 import logger from '../utils/logger.js';
-import { PrismaClient } from '@prisma/client';
 import type {CreateProductInputProps,UpdateProductInputProps} from '../types/productTypes.js';
 
-const prisma=new PrismaClient();
+import prisma from './lib/prisma.js';
+
+/*
+    Database functions 
+    1-findAllProducts    = Find all products
+    2-findProductById    = Find product by ID
+    3-createProduct      = Create new product
+    4-updateProduct      = Update product by ID
+    5-deleteProductById  = Delete product by ID
+ */
+
 
 export async function findAllProducts(){
   try {
@@ -58,5 +67,17 @@ export async function updateProduct(id:number,data:UpdateProductInputProps){
         return existingProduct;
     }catch(error){
         logger.error(`[Product]-[ProductRepository]-[updateProduct]: Product update failed - ${error}`);
+    }
+}
+
+export async function deleteProductById(id:number){
+    try{
+        logger.info(`[Product]-[Repository]-[deleteProductById]: Deleting product by id (${id})`);
+        return await prisma.product.delete({
+            where: { id }
+        });
+    }catch(error){
+        logger.error(`[Product]-[Repository]-[deleteProductById]: Error deleting product by id (${id}) - ${error}`);
+        throw new Error("Error deleting product");
     }
 }

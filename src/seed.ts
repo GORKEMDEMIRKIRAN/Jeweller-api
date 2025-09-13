@@ -1,8 +1,15 @@
 import { PrismaClient } from "@prisma/client";
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+import type { JwtPayload } from './types/express.js';
+import logger from "./utils/logger.js";
 const prisma = new PrismaClient();
 
 
 export default async function seed() {
+  const plainPassword = '123';
+  const saltRounds = 10;
+  const hashedPassword=await bcrypt.hash(plainPassword,saltRounds);
   //--------------------------------------------------------------------
   // userType add
   const userTypes = ["user", "manager", "admin"];
@@ -16,7 +23,7 @@ export default async function seed() {
     data: {
       username: "admin",
       email: "admin@example.com",
-      password: "123",
+      password: hashedPassword,
       userTypeId: userTypeObjs[2]?.id ?? 9999,
     },
   });
@@ -24,7 +31,7 @@ export default async function seed() {
     data: {
       username: "manager",
       email: "manager@example.com",
-      password: "123",
+      password: hashedPassword,
       userTypeId: userTypeObjs[1]?.id ?? 9999,
     },
   });
@@ -32,7 +39,7 @@ export default async function seed() {
     data: {
       username: "user",
       email: "user@example.com",
-      password: "123",
+      password: hashedPassword,
       userTypeId: userTypeObjs[0]?.id ?? 9999,
     },
   });
@@ -40,7 +47,7 @@ export default async function seed() {
     data: {
       username: "admin-2",
       email: "admin2@example.com",
-      password: "123",
+      password: hashedPassword,
       userTypeId: userTypeObjs[2]?.id ?? 9999,
     },
   });

@@ -1,201 +1,100 @@
-[2025-08-31 00:57:52] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
+[2025-09-12 00:43:45] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-12 00:44:02] [WARN]: [User]-[Service]-[registerUser]: User already exists (jemocew201@dextrago.com)
+[2025-09-12 00:44:02] [WARN]: [User]-[Controller]-[Register]: Error occurred - Error: User already exists
+[2025-09-12 00:44:35] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (jemocew201@dextrago.com)
+[2025-09-12 00:44:35] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 00:44:51] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (jemocew201@dextrago.com)
+[2025-09-12 00:44:51] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 00:44:57] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (jemocew201@dextrago.com)
+[2025-09-12 00:44:57] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 00:46:40] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (pacide7004@dextrago.com)
+[2025-09-12 00:46:40] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 12:16:23] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-12 12:44:07] [WARN]: [Auth]-[Service]-[loginUser]: User not found (admin@xample.com)
+[2025-09-12 12:44:07] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: user not found
+[2025-09-12 12:50:42] [WARN]: [User]-[Repository]-[deleteUserById]: Error deleting user by id (1) - PrismaClientKnownRequestError: 
+Invalid `prisma.user.delete()` invocation:
 
 
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 00:57:52] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
+Foreign key constraint violated on the constraint: `Customer_userId_fkey`
+[2025-09-12 12:56:59] [WARN]: [Customer]-[Repository]-[deleteAllCustomersByUserId]: Error deleting all customers by user id (1) - PrismaClientKnownRequestError: 
+Invalid `prisma.customer.deleteMany()` invocation:
 
 
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:00:00] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
+Foreign key constraint violated on the constraint: `Transaction_customerId_fkey`
+[2025-09-12 12:57:00] [WARN]: [User]-[Repository]-[deleteUserById]: Error deleting user by id (1) - PrismaClientKnownRequestError: 
+Invalid `prisma.user.delete()` invocation:
 
 
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:00:00] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
+Foreign key constraint violated on the constraint: `Customer_userId_fkey`
+[2025-09-12 13:00:11] [WARN]: [User]-[Controller]-[DeleteUserAccount]: Unauthorized, Token missing
+[2025-09-12 13:00:42] [WARN]: [User]-[Controller]-[DeleteUserAccount]: Unauthorized, Token missing
+[2025-09-12 13:02:37] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (utz15891@toaik.com)
+[2025-09-12 13:02:37] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 13:10:10] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (cewep43340@dpwev.com)
+[2025-09-12 13:10:10] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 13:17:44] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (yogalo3043@ishense.com)
+[2025-09-12 13:17:44] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 15:41:32] [WARN]: [Auth]-[Controller]-[ResetPassword]: Token is required
+[2025-09-12 15:41:38] [WARN]: [Auth]-[Controller]-[ResetPassword]: Token is required
+[2025-09-12 15:42:01] [WARN]: [Auth]-[Controller]-[ResetPassword]: Token is required
+[2025-09-12 16:37:38] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (miwosij701@ishense.com)
+[2025-09-12 16:37:38] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 16:51:25] [WARN]: [Auth]-[Controller]-[ResetPassword]: Token is required
+[2025-09-12 16:51:49] [WARN]: [Auth]-[Controller]-[ResetPassword]: Error occurred - TypeError: Cannot destructure property 'newPassword' of 'req.body' as it is undefined.
+[2025-09-12 16:56:38] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-12 17:07:13] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-12 20:04:41] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Token is blacklisted
+[2025-09-12 20:06:36] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Token is blacklisted
+[2025-09-12 22:41:11] [WARN]: [Auth]-[Controller]-[Login]: Error occurred - Error: Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +90543632XXXX
+[2025-09-12 22:47:18] [WARN]: [Auth]-[Controller]-[Login]: Error occurred - Error: 'From' +12065551234 is not a Twilio phone number or Short Code country mismatch
+[2025-09-12 22:49:40] [WARN]: [Auth]-[Controller]-[Login]: Error occurred - Error: 'From' +12065551234 is not a Twilio phone number or Short Code country mismatch
+[2025-09-12 22:50:23] [WARN]: [Auth]-[Controller]-[Login]: Error occurred - Error: 'From' +12065551234 is not a Twilio phone number or Short Code country mismatch
+[2025-09-12 22:57:27] [WARN]: [Auth]-[Controller]-[Login]: Error occurred - Error: 'From' +12065551234 is not a Twilio phone number or Short Code country mismatch
+[2025-09-12 22:59:13] [WARN]: [Auth]-[Controller]-[LoginPhone]: Invalid verification code
+[2025-09-12 22:59:26] [WARN]: [Auth]-[Controller]-[LoginPhone]: Invalid verification code
+[2025-09-12 22:59:49] [WARN]: [Auth]-[Controller]-[LoginPhone]: Invalid verification code
+[2025-09-12 23:03:11] [WARN]: [Auth]-[Controller]-[LoginPhone]: Invalid verification code
+[2025-09-12 23:04:23] [WARN]: [Auth]-[Controller]-[sendVerificationPhone]: User phone number not found
+[2025-09-12 23:05:38] [WARN]: [Auth]-[Controller]-[sendVerificationPhone]: User phone number not found
+[2025-09-12 23:10:13] [WARN]: [Auth]-[Controller]-[sendVerificationPhone]: User phone number not found
+[2025-09-12 23:20:48] [WARN]: [Auth]-[Controller]-[sendVerificationPhone]: User phone number not found
+[2025-09-12 23:26:19] [WARN]: [Auth]-[Controller]-[VerificationPhone]: Invalid verification code
+[2025-09-12 23:26:53] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Token is blacklisted
+[2025-09-13 01:11:00] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-13 01:14:39] [WARN]: [Product]-[ProductRepository]-[findProductById]: Product not found (6)
+[2025-09-13 01:14:39] [WARN]: [Product]-[ProductRepository]-[findProductById]: Error occurred - Error: Product not found
+[2025-09-13 01:14:39] [WARN]: [Product]-[Service]-[getProductById]:Error fetching product by id (6) - Error: Error retrieving product
+[2025-09-13 01:14:39] [WARN]: [Product]-[ProductController]-[getProductById]: Error occurred - Error: Error fetching product by id
+[2025-09-13 03:04:26] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-13 03:09:57] [WARN]: [Transaction]-[Controller]-[createTransaction]: No customer information provided
+[2025-09-13 03:13:39] [WARN]: [Transaction]-[Controller]-[createTransaction]: No customer information provided
+[2025-09-13 03:17:36] [WARN]: [Product]-[ProductRepository]-[createProduct]:Product create failed - PrismaClientKnownRequestError: 
+Invalid `prisma.product.create()` invocation:
 
 
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:00:21] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:00:21] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:02:36] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:02:36] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:04:24] [WARN]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:04:24] [WARN]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-09-03 12:58:22] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
+Foreign key constraint violated on the constraint: `Product_productTypeId_fkey`
+[2025-09-13 03:17:36] [WARN]: [Transaction]-[Service]-[createTransaction]: Error creating transaction - Error: Error creating product
+[2025-09-13 03:21:05] [WARN]: [Customer]-[Repository]-[findCustomerById]: Error finding customer by id (undefined) - PrismaClientValidationError: 
+Invalid `prisma.customer.findUnique()` invocation:
 
 {
-  data: {
-    email: "deneme@ex.com",
-    password: "$2b$10$gHsI6mJBCWSTX0aIyRz1aeRyfafc8UQpG50i3NiIEt5t31yo77LFW",
-    userTypeId: 1,
-    username: "deneme",
-    phone: 3242355,
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  where: {
+    id: undefined,
+?   email?: String,
+?   AND?: CustomerWhereInput | CustomerWhereInput[],
+?   OR?: CustomerWhereInput[],
+?   NOT?: CustomerWhereInput | CustomerWhereInput[],
+?   nameSurname?: StringFilter | String,
+?   phone?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   address?: StringNullableFilter | String | Null,
+?   customerTypeId?: IntFilter | Int,
+?   userId?: IntFilter | Int,
+?   customerType?: CustomerTypeScalarRelationFilter | CustomerTypeWhereInput,
+?   user?: UserScalarRelationFilter | UserWhereInput,
+?   transactions?: TransactionListRelationFilter
   }
 }
 
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 12:59:28] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "deneme@ex.com",
-    password: "$2b$10$2p7vju8HinCy9MP3PVNeseA2zb3pphvaOGRNbP0S/D2GuTcd0pR/u",
-    userTypeId: 1,
-    username: "deneme",
-    phone: "qweqwe",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 12:59:37] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "deneme@ex.com",
-    password: "$2b$10$zo2IW6WBSdUz.A3BgOIOQOSk25z7c2nVqH9DMPAl5HT2n66KUHlJm",
-    userTypeId: 1,
-    username: "deneme",
-    phone: "3434",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 13:04:50] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "deneme@example.com",
-    password: "$2b$10$15TEKlMDZ6ySljT4qL5KNeTaOUX/GB5AraP9Lv6.pfcCUoxZkiN8e",
-    userTypeId: 1,
-    username: "deneme",
-    phone: "123123",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 13:06:59] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "vn@example.com",
-    password: "$2b$10$RWTrBbDZios5NGZeGdaG1e6RVmBDtGnuUVWhnA1YVVW0vyyGK1Rsi",
-    userTypeId: 1,
-    username: "vn",
-    phone: "123123",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 13:13:36] [WARN]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "war@ease",
-    password: "$2b$10$Y3dYZTaQmsAHasVxRrA5jO6fDyNJIzNa449fOy1MrlrlpexYzSzV6",
-    userTypeId: 1,
-    username: "war",
-    phone: "12312",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 13:38:13] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
-[2025-09-03 14:28:50] [WARN]: [Auth]-[Middleware]-[RequestAuth]: No token
-[2025-09-03 14:33:57] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (ema@ema)
-[2025-09-03 14:33:57] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
-[2025-09-03 14:35:58] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:36:47] [WARN]: [Auth]-[Service]-[loginUser]: Invalid password (admin@example.com)
-[2025-09-03 14:36:47] [WARN]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
-[2025-09-03 14:41:17] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:41:20] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:41:22] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:57:40] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:57:46] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:57:50] [WARN]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 15:27:28] [WARN]: [Auth]-[Service]-[getUserById]: User not found (8)
-[2025-09-03 15:27:28] [WARN]: [Auth]-[Controller]-[GetUserProfile]: Error occurred - Error: User not found
+Argument `where` of type CustomerWhereUniqueInput needs at least one of `id` or `email` arguments. Available options are marked with ?.

@@ -3,11 +3,10 @@
 
 
 import logger from '../utils/logger.js';
-import { PrismaClient } from '@prisma/client';
 
 import type {RegisterUserInputProps,UpdateUserInputProps} from '../types/userTypes.js';
+import prisma from './lib/prisma.js';
 
-const prisma=new PrismaClient();
 
 
 /*
@@ -22,12 +21,13 @@ const prisma=new PrismaClient();
  */
 
 //----------------------------------------------------------------------------------------
-export async function findAllUsers(){
+export async function findAllUsers():Promise<any[]>{
     try{
         logger.info(`[User]-[Repository]-[findAllUsers]: Finding all users`)
         return await prisma.user.findMany();
     }catch(error){
         logger.error(`[User]-[Repository]-[findAllUsers]: Error finding all users - ${error}`)
+        return []; // <--- Burada boş dizi döndür!
     }
 }
 //----------------------------------------------------------------------------------------

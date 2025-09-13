@@ -15,18 +15,22 @@ datasource db {
 }
 
 model User {
-  id           Int           @id @default(autoincrement())
-  username     String?
-  phone        Int?
-  email        String        @unique
-  password     String        @db.VarChar(255)
-  accessToken  String?       @db.VarChar(255)
-  refreshToken String?       @db.VarChar(255)
-  createdAt    DateTime      @default(now())
-  userTypeId   Int
-  userType     UserType      @relation(fields: [userTypeId], references: [id])
-  transactions Transaction[]
-  customers    Customer[]
+  id                    Int           @id @default(autoincrement())
+  username              String?
+  phone                 String?
+  email                 String        @unique
+  isEmailVerified       Boolean?      @default(false)
+  isPhoneVerified       Boolean?      @default(false)
+  phoneVerificationCode Int?          @default(0)
+  phoneCodeExpiresAt    DateTime?     @default(now())
+  password              String        @db.VarChar(255)
+  accessToken           String?       @db.VarChar(255)
+  refreshToken          String?       @db.VarChar(255)
+  createdAt             DateTime      @default(now())
+  userTypeId            Int
+  userType              UserType      @relation(fields: [userTypeId], references: [id])
+  transactions          Transaction[]
+  customers             Customer[]
 }
 
 model UserType {
@@ -36,16 +40,16 @@ model UserType {
 }
 
 model Customer {
-  id             Int          @id @default(autoincrement())
+  id             Int           @id @default(autoincrement())
   nameSurname    String
-  email          String       @unique
+  email          String        @unique
   phone          String?
-  createdAt      DateTime     @default(now())
+  createdAt      DateTime      @default(now())
   address        String?
   customerTypeId Int
-  customerType   CustomerType @relation(fields: [customerTypeId], references: [id])
+  customerType   CustomerType  @relation(fields: [customerTypeId], references: [id])
   userId         Int
-  user           User         @relation(fields: [userId], references: [id])
+  user           User          @relation(fields: [userId], references: [id])
   transactions   Transaction[]
 }
 
@@ -76,15 +80,15 @@ model ProductType {
 }
 
 model Transaction {
-  id                    Int                  @id @default(autoincrement())
-  userId                Int
-  user                  User                 @relation(fields: [userId], references: [id])
-  customerId            Int
-  customer              Customer             @relation(fields: [customerId], references: [id])
-  transactionTypeId     Int
-  transactionType       TransactionType      @relation(fields: [transactionTypeId], references: [id])
-  createdAt             DateTime             @default(now())
-  TransactionProduct    TransactionProduct[]
+  id                 Int                  @id @default(autoincrement())
+  userId             Int
+  user               User                 @relation(fields: [userId], references: [id])
+  customerId         Int
+  customer           Customer             @relation(fields: [customerId], references: [id])
+  transactionTypeId  Int
+  transactionType    TransactionType      @relation(fields: [transactionTypeId], references: [id])
+  createdAt          DateTime             @default(now())
+  TransactionProduct TransactionProduct[]
 }
 
 model TransactionType {

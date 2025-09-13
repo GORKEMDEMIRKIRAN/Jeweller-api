@@ -2,9 +2,11 @@
 
 
 import bcrypt from "bcrypt";
-
+import { hashPassword } from "../config/token.js";
 import logger from "../utils/logger.js";
+import * as token from '../config/token.js';
 import * as userRepository from "../repositories/userRepository.js";
+import * as customerRepository from "../repositories/customerRepository.js";
 import type {RegisterUserInputProps,UpdateUserInputProps} from '../types/userTypes.js';
 
 
@@ -13,6 +15,8 @@ import type {RegisterUserInputProps,UpdateUserInputProps} from '../types/userTyp
 export async function registerUser({
   email,
   password,
+  isEmailVerified,
+  isPhoneVerified,
   userTypeId,
   username,
   phone,
@@ -27,6 +31,8 @@ export async function registerUser({
   };
   if (username !== undefined) userData.username = username;
   if (phone !== undefined) userData.phone = phone;
+  if (isEmailVerified !== undefined) userData.isEmailVerified = isEmailVerified;
+  if (isPhoneVerified !== undefined) userData.isPhoneVerified = isPhoneVerified;
   if (accessToken !== undefined) userData.accessToken = accessToken;
   if (refreshToken !== undefined) userData.refreshToken = refreshToken;
 
@@ -39,13 +45,11 @@ export async function registerUser({
     );
     throw new Error("User already exists");
   }
-  // create hashes password
-  const hashedPassword = await bcrypt.hash(password, 10);
   logger.info(
     `[User]-[Service]-[registerUser]: User registered successfully (${email})`
   );
   // register user
-  return userRepository.createUser({...userData, password: hashedPassword });
+  return userRepository.createUser({...userData, password: await token.hashPassword(password)});
 }
 
 export async function deleteUser(id: number) {
@@ -56,7 +60,8 @@ export async function deleteUser(id: number) {
     throw new Error("User not found");
   }
   logger.info(`[User]-[Service]-[deleteUser]: User deleted successfully (${id})`);
-  await userRepository.deleteUserById(id);
+  await customerRepository.deleteAllCustomersByUserId(user.id);
+  await userRepository.deleteUserById(user.id);
   // return deleted user info
   return user;
 }
@@ -78,13 +83,27 @@ export async function getAllUsers(){
 
 export async function updateUser(
   id: number,
-  {  email, password, userTypeId, username, phone, accessToken, refreshToken }: UpdateUserInputProps
+  {  email,
+     password,
+     isEmailVerified,
+      isPhoneVerified,
+      phoneVerificationCode,
+      phoneCodeExpiresAt,
+      userTypeId,
+      username,
+      phone,
+      accessToken,
+      refreshToken }: UpdateUserInputProps
 ) {
   const updateData: UpdateUserInputProps = {};
 
   
   if (email !== undefined) updateData.email = email;
-  if (password !== undefined) updateData.password = password;
+  if (password !== undefined) updateData.password = await hashPassword(password);
+  if (isEmailVerified !== undefined) updateData.isEmailVerified = isEmailVerified;
+  if (isPhoneVerified !== undefined) updateData.isPhoneVerified = isPhoneVerified;
+  if (phoneVerificationCode !== undefined) updateData.phoneVerificationCode = phoneVerificationCode;
+  if (phoneCodeExpiresAt !== undefined) updateData.phoneCodeExpiresAt = phoneCodeExpiresAt;
   if (userTypeId !== undefined) updateData.userTypeId = userTypeId;
   if (username !== undefined) updateData.username = username;
   if (phone !== undefined) updateData.phone = phone;

@@ -1,342 +1,962 @@
-[2025-08-31 00:57:52] [INFO]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
+[2025-09-12 00:43:45] [INFO]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-12 00:44:00] [INFO]: [Token]-[Service]-[hashPassword]: Password hashed successfully
+[2025-09-12 00:44:00] [INFO]: [User]-[Service]-[registerUser]: Registering user (jemocew201@dextrago.com)
+[2025-09-12 00:44:00] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (jemocew201@dextrago.com)
+[2025-09-12 00:44:02] [INFO]: [User]-[Service]-[registerUser]: User already exists (jemocew201@dextrago.com)
+[2025-09-12 00:44:02] [INFO]: [User]-[Controller]-[Register]: Error occurred - Error: User already exists
+[2025-09-12 00:44:34] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (jemocew201@dextrago.com)
+[2025-09-12 00:44:34] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (jemocew201@dextrago.com)
+[2025-09-12 00:44:35] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (jemocew201@dextrago.com)
+[2025-09-12 00:44:35] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 00:44:50] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (jemocew201@dextrago.com)
+[2025-09-12 00:44:50] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (jemocew201@dextrago.com)
+[2025-09-12 00:44:51] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (jemocew201@dextrago.com)
+[2025-09-12 00:44:51] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 00:44:57] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (jemocew201@dextrago.com)
+[2025-09-12 00:44:57] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (jemocew201@dextrago.com)
+[2025-09-12 00:44:57] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (jemocew201@dextrago.com)
+[2025-09-12 00:44:57] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 00:45:51] [INFO]: [Token]-[Service]-[hashPassword]: Password hashed successfully
+[2025-09-12 00:45:51] [INFO]: [User]-[Service]-[registerUser]: Registering user (pacide7004@dextrago.com)
+[2025-09-12 00:45:51] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (pacide7004@dextrago.com)
+[2025-09-12 00:45:51] [INFO]: [User]-[Service]-[registerUser]: User registered successfully (pacide7004@dextrago.com)
+[2025-09-12 00:45:51] [INFO]: [User]-[Repository]-[createUser]: Creating user (pacide7004@dextrago.com)
+[2025-09-12 00:45:52] [INFO]: [User]-[Controller]-[Register]: User created in DB (pacide7004@dextrago.com)
+[2025-09-12 00:45:52] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (pacide7004@dextrago.com)
+[2025-09-12 00:45:52] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (pacide7004@dextrago.com)
+[2025-09-12 00:45:52] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (pacide7004@dextrago.com)
+[2025-09-12 00:45:52] [INFO]: [User]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJwYWNpZGU3MDA0QGRleHRyYWdvLmNvbSIsImlhdCI6MTc1NzYyNzE1MiwiZXhwIjoxNzU3NzEzNTUyfQ.UTTzgot4ELFgFVA1CQaG3LvhcfOG1wFkbxGG4HbqHHM,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJwYWNpZGU3MDA0QGRleHRyYWdvLmNvbSIsImlhdCI6MTc1NzYyNzE1MiwiZXhwIjoxNzU4MjMxOTUyfQ.YmxmtzMA1rUNd44gxyOA5s8bm_116jYiba4ibXZbhiI)
+[2025-09-12 00:45:52] [INFO]: [User]-[Service]-[updateUser]: Updating user (6)
+[2025-09-12 00:45:52] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (6)
+[2025-09-12 00:45:52] [INFO]: [User]-[Service]-[updateUser]: User found (6)
+[2025-09-12 00:45:52] [INFO]: [User]-[Repository]-[updateUser]: Updating user (6)
+[2025-09-12 00:45:52] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (pacide7004@dextrago.com)
+[2025-09-12 00:45:55] [INFO]: [Auth]-[Service]-[sendEmail]: Sending email to (pacide7004@dextrago.com)
+[2025-09-12 00:45:55] [INFO]: [User]-[Controller]-[Register]: Verification email sent (pacide7004@dextrago.com)
+[2025-09-12 00:45:55] [INFO]: [User]-[Controller]-[Register]: User registered successfully (pacide7004@dextrago.com)
+[2025-09-12 00:46:40] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (pacide7004@dextrago.com)
+[2025-09-12 00:46:40] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (pacide7004@dextrago.com)
+[2025-09-12 00:46:40] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (pacide7004@dextrago.com)
+[2025-09-12 00:46:40] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 00:50:21] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 00:50:21] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 00:50:22] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 00:50:22] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 00:50:22] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 00:50:22] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 00:50:22] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 00:50:23] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 00:50:23] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 00:50:23] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 01:06:19] [INFO]: [Token]-[Service]-[hashPassword]: Password hashed successfully
+[2025-09-12 01:06:19] [INFO]: [User]-[Service]-[registerUser]: Registering user (yoneni2385@dextrago.com)
+[2025-09-12 01:06:19] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (yoneni2385@dextrago.com)
+[2025-09-12 01:06:21] [INFO]: [User]-[Service]-[registerUser]: User registered successfully (yoneni2385@dextrago.com)
+[2025-09-12 01:06:21] [INFO]: [User]-[Repository]-[createUser]: Creating user (yoneni2385@dextrago.com)
+[2025-09-12 01:06:21] [INFO]: [User]-[Controller]-[Register]: User created in DB (yoneni2385@dextrago.com)
+[2025-09-12 01:06:21] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (yoneni2385@dextrago.com)
+[2025-09-12 01:06:21] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (yoneni2385@dextrago.com)
+[2025-09-12 01:06:21] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (yoneni2385@dextrago.com)
+[2025-09-12 01:06:21] [INFO]: [User]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJ5b25lbmkyMzg1QGRleHRyYWdvLmNvbSIsImlhdCI6MTc1NzYyODM4MSwiZXhwIjoxNzU3NzE0NzgxfQ.lk_Fzs-RClm87dA-mU1mOPe9RIjKFkAipdghsF_Nu2c,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJ5b25lbmkyMzg1QGRleHRyYWdvLmNvbSIsImlhdCI6MTc1NzYyODM4MSwiZXhwIjoxNzU4MjMzMTgxfQ.wqPIxAn0Mt3YARh_fkqKoU2NuSHmyZYAavdkfsQ4LFw)
+[2025-09-12 01:06:21] [INFO]: [User]-[Service]-[updateUser]: Updating user (7)
+[2025-09-12 01:06:21] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (7)
+[2025-09-12 01:06:21] [INFO]: [User]-[Service]-[updateUser]: User found (7)
+[2025-09-12 01:06:21] [INFO]: [User]-[Repository]-[updateUser]: Updating user (7)
+[2025-09-12 01:06:22] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (yoneni2385@dextrago.com)
+[2025-09-12 01:06:24] [INFO]: [Auth]-[Service]-[sendEmail]: Sending email to (yoneni2385@dextrago.com)
+[2025-09-12 01:06:24] [INFO]: [User]-[Controller]-[Register]: Verification email sent (yoneni2385@dextrago.com)
+[2025-09-12 01:06:24] [INFO]: [User]-[Controller]-[Register]: User registered successfully (yoneni2385@dextrago.com)
+[2025-09-12 01:09:29] [INFO]: [Token]-[Service]-[hashPassword]: Password hashed successfully
+[2025-09-12 01:09:29] [INFO]: [User]-[Service]-[registerUser]: Registering user (utz15891@toaik.com)
+[2025-09-12 01:09:29] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (utz15891@toaik.com)
+[2025-09-12 01:09:31] [INFO]: [User]-[Service]-[registerUser]: User registered successfully (utz15891@toaik.com)
+[2025-09-12 01:09:31] [INFO]: [User]-[Repository]-[createUser]: Creating user (utz15891@toaik.com)
+[2025-09-12 01:09:31] [INFO]: [User]-[Controller]-[Register]: User created in DB (utz15891@toaik.com)
+[2025-09-12 01:09:31] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (utz15891@toaik.com)
+[2025-09-12 01:09:31] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (utz15891@toaik.com)
+[2025-09-12 01:09:31] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (utz15891@toaik.com)
+[2025-09-12 01:09:31] [INFO]: [User]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJ1dHoxNTg5MUB0b2Fpay5jb20iLCJpYXQiOjE3NTc2Mjg1NzEsImV4cCI6MTc1NzcxNDk3MX0.2-SXPGncPqp1dFYb7_aXAYPkUID_hYy1_0Ve_gcLCb8,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJ1dHoxNTg5MUB0b2Fpay5jb20iLCJpYXQiOjE3NTc2Mjg1NzEsImV4cCI6MTc1ODIzMzM3MX0.KnQ7n_vgfaRxHALSb8MLG7tM452eZG3yc9KlkI_Ogc8)
+[2025-09-12 01:09:31] [INFO]: [User]-[Service]-[updateUser]: Updating user (8)
+[2025-09-12 01:09:31] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (8)
+[2025-09-12 01:09:31] [INFO]: [User]-[Service]-[updateUser]: User found (8)
+[2025-09-12 01:09:31] [INFO]: [User]-[Repository]-[updateUser]: Updating user (8)
+[2025-09-12 01:09:32] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (utz15891@toaik.com)
+[2025-09-12 01:09:34] [INFO]: [Auth]-[Service]-[sendEmail]: Sending email to (utz15891@toaik.com)
+[2025-09-12 01:09:34] [INFO]: [User]-[Controller]-[Register]: Verification email sent (utz15891@toaik.com)
+[2025-09-12 01:09:34] [INFO]: [User]-[Controller]-[Register]: User registered successfully (utz15891@toaik.com)
+[2025-09-12 01:11:18] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (8)
+[2025-09-12 01:11:18] [INFO]: [User]-[Repository]-[updateUser]: Updating user (8)
+[2025-09-12 01:11:18] [INFO]: [Auth]-[Service]-[verifyEmail]: Email verified successfully for user (utz15891@toaik.com)
+[2025-09-12 01:16:25] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 01:16:25] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 01:16:26] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 01:16:26] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 01:16:26] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 01:16:26] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 01:16:26] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 01:16:26] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 01:16:26] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 01:16:27] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 01:16:41] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:16:41] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:16:41] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:16:42] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:21:13] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:21:23] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:21:23] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:21:23] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:21:23] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:22:14] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:22:14] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:22:14] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:22:15] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:22:26] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:22:26] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:22:26] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:22:27] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:33:01] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:33:01] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:33:01] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:33:03] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:36:47] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:36:47] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:36:47] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:36:48] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:36:53] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:36:53] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:36:53] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:36:53] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:39:59] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:39:59] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:39:59] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:40:00] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:40:45] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:40:45] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:40:45] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:40:45] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:40:47] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:40:47] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:40:47] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:40:47] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:40:58] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:40:58] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:40:58] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:40:59] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:41:07] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:41:07] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:41:07] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:41:07] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:41:55] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:41:55] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:41:55] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:41:57] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:45:59] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:45:59] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:45:59] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:46:00] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:46:58] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 01:46:58] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 01:46:59] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 01:46:59] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 01:46:59] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 01:46:59] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 01:46:59] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 01:47:00] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 01:47:00] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 01:47:00] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 01:47:17] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:47:17] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:47:17] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:47:18] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 01:55:14] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 01:55:14] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 01:55:14] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 01:55:16] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 12:16:23] [INFO]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-12 12:16:41] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 12:16:41] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 12:16:43] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 12:16:43] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 12:16:43] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 12:16:43] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 12:16:43] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 12:16:43] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 12:16:43] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 12:16:43] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 12:16:56] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:16:56] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 12:16:56] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 12:16:56] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 12:17:21] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:17:21] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 12:17:21] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 12:17:22] [INFO]: [User]-[Controller]-[GetUserProfile]: User profile retrieved successfully (1)
+[2025-09-12 12:33:57] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:33:57] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 12:33:57] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 12:33:59] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 12:34:06] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:34:06] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 12:34:06] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 12:34:07] [INFO]: [User]-[Controller]-[GetUserProfile]: User profile retrieved successfully (1)
+[2025-09-12 12:34:23] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:42:39] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:42:39] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 12:42:39] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 12:42:41] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 12:42:56] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:44:06] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@xample.com)
+[2025-09-12 12:44:06] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@xample.com)
+[2025-09-12 12:44:07] [INFO]: [Auth]-[Service]-[loginUser]: User not found (admin@xample.com)
+[2025-09-12 12:44:07] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: user not found
+[2025-09-12 12:44:15] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 12:44:15] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 12:44:15] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 12:44:15] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 12:44:15] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 12:44:15] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 12:44:15] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 12:44:15] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 12:44:15] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 12:44:16] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 12:44:30] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:44:30] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 12:44:30] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 12:44:31] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 12:49:32] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 12:49:32] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 12:49:34] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 12:49:34] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 12:49:34] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 12:49:34] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 12:49:34] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 12:49:34] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 12:49:34] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 12:49:34] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 12:50:08] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:50:08] [INFO]: [Token]-[Service]-[hashPassword]: Password hashed successfully
+[2025-09-12 12:50:08] [INFO]: [User]-[Service]-[updateUser]: Updating user (5)
+[2025-09-12 12:50:08] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (5)
+[2025-09-12 12:50:09] [INFO]: [User]-[Service]-[updateUser]: User found (5)
+[2025-09-12 12:50:09] [INFO]: [User]-[Repository]-[updateUser]: Updating user (5)
+[2025-09-12 12:50:09] [INFO]: [User]-[Controller]-[updateUserProfile]: User profile updated successfully (5)
+[2025-09-12 12:50:41] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:50:41] [INFO]: [User]-[Service]-[deleteUser]: Deleting user (1)
+[2025-09-12 12:50:41] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 12:50:41] [INFO]: [User]-[Service]-[deleteUser]: User deleted successfully (1)
+[2025-09-12 12:50:41] [INFO]: [User]-[Repository]-[deleteUserById]: Deleting user by id (1)
+[2025-09-12 12:50:42] [INFO]: [User]-[Repository]-[deleteUserById]: Error deleting user by id (1) - PrismaClientKnownRequestError: 
+Invalid `prisma.user.delete()` invocation:
 
 
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 00:57:52] [INFO]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
+Foreign key constraint violated on the constraint: `Customer_userId_fkey`
+[2025-09-12 12:50:42] [INFO]: [User]-[Controller]-[DeleteUserAccount]: User account deleted successfully (1)
+[2025-09-12 12:56:38] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 12:56:38] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 12:56:39] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 12:56:39] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 12:56:39] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 12:56:39] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 12:56:39] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 12:56:39] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 12:56:39] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 12:56:40] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 12:56:59] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 12:56:59] [INFO]: [User]-[Service]-[deleteUser]: Deleting user (1)
+[2025-09-12 12:56:59] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 12:56:59] [INFO]: [User]-[Service]-[deleteUser]: User deleted successfully (1)
+[2025-09-12 12:56:59] [INFO]: [Customer]-[Repository]-[deleteAllCustomersByUserId]: Deleting all customers by user id (1)
+[2025-09-12 12:56:59] [INFO]: [Customer]-[Repository]-[deleteAllCustomersByUserId]: Error deleting all customers by user id (1) - PrismaClientKnownRequestError: 
+Invalid `prisma.customer.deleteMany()` invocation:
 
 
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:00:00] [INFO]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
+Foreign key constraint violated on the constraint: `Transaction_customerId_fkey`
+[2025-09-12 12:56:59] [INFO]: [User]-[Repository]-[deleteUserById]: Deleting user by id (1)
+[2025-09-12 12:57:00] [INFO]: [User]-[Repository]-[deleteUserById]: Error deleting user by id (1) - PrismaClientKnownRequestError: 
+Invalid `prisma.user.delete()` invocation:
 
 
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:00:00] [INFO]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
+Foreign key constraint violated on the constraint: `Customer_userId_fkey`
+[2025-09-12 12:57:00] [INFO]: [User]-[Controller]-[DeleteUserAccount]: User account deleted successfully (1)
+[2025-09-12 13:00:11] [INFO]: [User]-[Controller]-[DeleteUserAccount]: Unauthorized, Token missing
+[2025-09-12 13:00:42] [INFO]: [User]-[Controller]-[DeleteUserAccount]: Unauthorized, Token missing
+[2025-09-12 13:02:35] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (utz15891@toaik.com)
+[2025-09-12 13:02:35] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (utz15891@toaik.com)
+[2025-09-12 13:02:37] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (utz15891@toaik.com)
+[2025-09-12 13:02:37] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 13:03:17] [INFO]: [Token]-[Service]-[hashPassword]: Password hashed successfully
+[2025-09-12 13:03:17] [INFO]: [User]-[Service]-[registerUser]: Registering user (cewep43340@dpwev.com)
+[2025-09-12 13:03:17] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (cewep43340@dpwev.com)
+[2025-09-12 13:03:18] [INFO]: [User]-[Service]-[registerUser]: User registered successfully (cewep43340@dpwev.com)
+[2025-09-12 13:03:18] [INFO]: [User]-[Repository]-[createUser]: Creating user (cewep43340@dpwev.com)
+[2025-09-12 13:03:18] [INFO]: [User]-[Controller]-[Register]: User created in DB (cewep43340@dpwev.com)
+[2025-09-12 13:03:18] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (cewep43340@dpwev.com)
+[2025-09-12 13:03:18] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (cewep43340@dpwev.com)
+[2025-09-12 13:03:18] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (cewep43340@dpwev.com)
+[2025-09-12 13:03:18] [INFO]: [User]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJjZXdlcDQzMzQwQGRwd2V2LmNvbSIsImlhdCI6MTc1NzY3MTM5OCwiZXhwIjoxNzU3NzU3Nzk4fQ.2EH9g6pgipHLgINC11y6Sy4-5KzdDgYFwUtlzdUfmR0,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJjZXdlcDQzMzQwQGRwd2V2LmNvbSIsImlhdCI6MTc1NzY3MTM5OCwiZXhwIjoxNzU4Mjc2MTk4fQ.qimAxT48UCJ8exwiK7ickFy6IAPbeLhC-_gLhaZ4KZk)
+[2025-09-12 13:03:18] [INFO]: [User]-[Service]-[updateUser]: Updating user (9)
+[2025-09-12 13:03:18] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (9)
+[2025-09-12 13:03:18] [INFO]: [User]-[Service]-[updateUser]: User found (9)
+[2025-09-12 13:03:18] [INFO]: [User]-[Repository]-[updateUser]: Updating user (9)
+[2025-09-12 13:03:19] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (cewep43340@dpwev.com)
+[2025-09-12 13:03:21] [INFO]: [Auth]-[Service]-[sendEmail]: Sending email to (cewep43340@dpwev.com)
+[2025-09-12 13:03:21] [INFO]: [User]-[Controller]-[Register]: Verification email sent (cewep43340@dpwev.com)
+[2025-09-12 13:03:21] [INFO]: [User]-[Controller]-[Register]: User registered successfully (cewep43340@dpwev.com)
+[2025-09-12 13:03:39] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 13:03:39] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 13:03:39] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 13:03:39] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 13:04:08] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 13:04:08] [INFO]: [User]-[Service]-[deleteUser]: Deleting user (9)
+[2025-09-12 13:04:08] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (9)
+[2025-09-12 13:04:08] [INFO]: [User]-[Service]-[deleteUser]: User deleted successfully (9)
+[2025-09-12 13:04:08] [INFO]: [Customer]-[Repository]-[deleteAllCustomersByUserId]: Deleting all customers by user id (9)
+[2025-09-12 13:04:08] [INFO]: [User]-[Repository]-[deleteUserById]: Deleting user by id (9)
+[2025-09-12 13:04:09] [INFO]: [User]-[Controller]-[DeleteUserAccount]: User account deleted successfully (9)
+[2025-09-12 13:08:13] [INFO]: [Token]-[Service]-[hashPassword]: Password hashed successfully
+[2025-09-12 13:08:13] [INFO]: [User]-[Service]-[registerUser]: Registering user (cewep43340@dpwev.com)
+[2025-09-12 13:08:13] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (cewep43340@dpwev.com)
+[2025-09-12 13:08:15] [INFO]: [User]-[Service]-[registerUser]: User registered successfully (cewep43340@dpwev.com)
+[2025-09-12 13:08:15] [INFO]: [User]-[Repository]-[createUser]: Creating user (cewep43340@dpwev.com)
+[2025-09-12 13:08:15] [INFO]: [User]-[Controller]-[Register]: User created in DB (cewep43340@dpwev.com)
+[2025-09-12 13:08:15] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (cewep43340@dpwev.com)
+[2025-09-12 13:08:15] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (cewep43340@dpwev.com)
+[2025-09-12 13:08:15] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (cewep43340@dpwev.com)
+[2025-09-12 13:08:15] [INFO]: [User]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImVtYWlsIjoiY2V3ZXA0MzM0MEBkcHdldi5jb20iLCJpYXQiOjE3NTc2NzE2OTUsImV4cCI6MTc1Nzc1ODA5NX0.H72buGDIcSbMXoa7a-T3g7-RssuU-E87zhw2Vo1bq3k,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImVtYWlsIjoiY2V3ZXA0MzM0MEBkcHdldi5jb20iLCJpYXQiOjE3NTc2NzE2OTUsImV4cCI6MTc1ODI3NjQ5NX0.2mZUQsmzdhppNRjapxqPnPdd-Wxg9GEL2fLd4sRbjak)
+[2025-09-12 13:08:15] [INFO]: [User]-[Service]-[updateUser]: Updating user (10)
+[2025-09-12 13:08:15] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (10)
+[2025-09-12 13:08:15] [INFO]: [User]-[Service]-[updateUser]: User found (10)
+[2025-09-12 13:08:15] [INFO]: [User]-[Repository]-[updateUser]: Updating user (10)
+[2025-09-12 13:08:16] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (cewep43340@dpwev.com)
+[2025-09-12 13:08:18] [INFO]: [Auth]-[Service]-[sendEmail]: Sending email to (cewep43340@dpwev.com)
+[2025-09-12 13:08:18] [INFO]: [User]-[Controller]-[Register]: Verification email sent (cewep43340@dpwev.com)
+[2025-09-12 13:08:18] [INFO]: [User]-[Controller]-[Register]: User registered successfully (cewep43340@dpwev.com)
+[2025-09-12 13:08:36] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 13:08:36] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 13:08:36] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 13:08:37] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 13:10:09] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (cewep43340@dpwev.com)
+[2025-09-12 13:10:09] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (cewep43340@dpwev.com)
+[2025-09-12 13:10:10] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (cewep43340@dpwev.com)
+[2025-09-12 13:10:10] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 13:17:27] [INFO]: [User]-[Service]-[registerUser]: Registering user (yogalo3043@ishense.com)
+[2025-09-12 13:17:27] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (yogalo3043@ishense.com)
+[2025-09-12 13:17:29] [INFO]: [User]-[Service]-[registerUser]: User registered successfully (yogalo3043@ishense.com)
+[2025-09-12 13:17:29] [INFO]: [Token]-[Service]-[hashPassword]: Password hashed successfully
+[2025-09-12 13:17:29] [INFO]: [User]-[Repository]-[createUser]: Creating user (yogalo3043@ishense.com)
+[2025-09-12 13:17:30] [INFO]: [User]-[Controller]-[Register]: User created in DB (yogalo3043@ishense.com)
+[2025-09-12 13:17:30] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (yogalo3043@ishense.com)
+[2025-09-12 13:17:30] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (yogalo3043@ishense.com)
+[2025-09-12 13:17:30] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (yogalo3043@ishense.com)
+[2025-09-12 13:17:30] [INFO]: [User]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoieW9nYWxvMzA0M0Bpc2hlbnNlLmNvbSIsImlhdCI6MTc1NzY3MjI1MCwiZXhwIjoxNzU3NzU4NjUwfQ.TiZ0ALmAo2M0mM0sYx1bmCokxIRKyZfCGVhrI5yo7lo,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoieW9nYWxvMzA0M0Bpc2hlbnNlLmNvbSIsImlhdCI6MTc1NzY3MjI1MCwiZXhwIjoxNzU4Mjc3MDUwfQ.YGtNROm8Yi9C66CxCZe-8kmXUp7pNdxkY4OgTc3uQUU)
+[2025-09-12 13:17:30] [INFO]: [User]-[Service]-[updateUser]: Updating user (11)
+[2025-09-12 13:17:30] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (11)
+[2025-09-12 13:17:30] [INFO]: [User]-[Service]-[updateUser]: User found (11)
+[2025-09-12 13:17:30] [INFO]: [User]-[Repository]-[updateUser]: Updating user (11)
+[2025-09-12 13:17:30] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (yogalo3043@ishense.com)
+[2025-09-12 13:17:32] [INFO]: [Auth]-[Service]-[sendEmail]: Sending email to (yogalo3043@ishense.com)
+[2025-09-12 13:17:32] [INFO]: [User]-[Controller]-[Register]: Verification email sent (yogalo3043@ishense.com)
+[2025-09-12 13:17:32] [INFO]: [User]-[Controller]-[Register]: User registered successfully (yogalo3043@ishense.com)
+[2025-09-12 13:17:44] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (yogalo3043@ishense.com)
+[2025-09-12 13:17:44] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (yogalo3043@ishense.com)
+[2025-09-12 13:17:44] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (yogalo3043@ishense.com)
+[2025-09-12 13:17:44] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 13:18:15] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (yogalo3043@ishense.com)
+[2025-09-12 13:18:15] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (yogalo3043@ishense.com)
+[2025-09-12 13:18:16] [INFO]: [Token]-[Service]-[generateTokens]: Generating tokens for user (yogalo3043@ishense.com)
+[2025-09-12 13:18:16] [INFO]: [Token]-[Service]-[generateTokens]: Tokens generated successfully for user (yogalo3043@ishense.com)
+[2025-09-12 13:18:16] [INFO]: [Token]-[Service]-[generateTokens]: Refresh token generated successfully for user (yogalo3043@ishense.com)
+[2025-09-12 13:18:16] [INFO]: [User]-[Service]-[updateUser]: Updating user (11)
+[2025-09-12 13:18:16] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (11)
+[2025-09-12 13:18:16] [INFO]: [User]-[Service]-[updateUser]: User found (11)
+[2025-09-12 13:18:16] [INFO]: [User]-[Repository]-[updateUser]: Updating user (11)
+[2025-09-12 13:18:16] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (yogalo3043@ishense.com)
+[2025-09-12 13:19:18] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 13:19:18] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 13:19:18] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 13:19:19] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 13:19:26] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 13:19:26] [INFO]: [User]-[Service]-[deleteUser]: Deleting user (11)
+[2025-09-12 13:19:26] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (11)
+[2025-09-12 13:19:27] [INFO]: [User]-[Service]-[deleteUser]: User deleted successfully (11)
+[2025-09-12 13:19:27] [INFO]: [Customer]-[Repository]-[deleteAllCustomersByUserId]: Deleting all customers by user id (11)
+[2025-09-12 13:19:27] [INFO]: [User]-[Repository]-[deleteUserById]: Deleting user by id (11)
+[2025-09-12 13:19:27] [INFO]: [User]-[Controller]-[DeleteUserAccount]: User account deleted successfully (11)
+[2025-09-12 13:19:39] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 13:19:39] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 13:19:39] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 13:19:39] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 15:40:04] [INFO]: [User]-[Service]-[registerUser]: Registering user (mecayor201@ishense.com)
+[2025-09-12 15:40:04] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (mecayor201@ishense.com)
+[2025-09-12 15:40:06] [INFO]: [User]-[Service]-[registerUser]: User registered successfully (mecayor201@ishense.com)
+[2025-09-12 15:40:06] [INFO]: [Config]-[Token]-[hashPassword]: Password hashed successfully
+[2025-09-12 15:40:06] [INFO]: [User]-[Repository]-[createUser]: Creating user (mecayor201@ishense.com)
+[2025-09-12 15:40:06] [INFO]: [User]-[Controller]-[Register]: User created in DB (mecayor201@ishense.com)
+[2025-09-12 15:40:06] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (mecayor201@ishense.com)
+[2025-09-12 15:40:06] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (mecayor201@ishense.com)
+[2025-09-12 15:40:06] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (mecayor201@ishense.com)
+[2025-09-12 15:40:06] [INFO]: [User]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImVtYWlsIjoibWVjYXlvcjIwMUBpc2hlbnNlLmNvbSIsImlhdCI6MTc1NzY4MDgwNiwiZXhwIjoxNzU3NzY3MjA2fQ.S0ULoKzjWPz5zqxxPRp0mMfPRfsvSeK4vh_uz7uiwWA,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImVtYWlsIjoibWVjYXlvcjIwMUBpc2hlbnNlLmNvbSIsImlhdCI6MTc1NzY4MDgwNiwiZXhwIjoxNzU4Mjg1NjA2fQ.sbIBfv3_e09tKl83wN6jt9qFuh3jlD3wumwSboSWtt8)
+[2025-09-12 15:40:06] [INFO]: [User]-[Service]-[updateUser]: Updating user (12)
+[2025-09-12 15:40:06] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (12)
+[2025-09-12 15:40:07] [INFO]: [User]-[Service]-[updateUser]: User found (12)
+[2025-09-12 15:40:07] [INFO]: [User]-[Repository]-[updateUser]: Updating user (12)
+[2025-09-12 15:40:07] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (mecayor201@ishense.com)
+[2025-09-12 15:40:07] [INFO]: [Config]-[Token]-[generateEmailVerificationToken]: Generating email verification token for user (mecayor201@ishense.com)
+[2025-09-12 15:40:07] [INFO]: [Auth]-[Service]-[sendEmail]: Created verification token for email to (mecayor201@ishense.com)
+[2025-09-12 15:40:09] [INFO]: [Auth]-[Service]-[sendEmail]: Sending email to (mecayor201@ishense.com)
+[2025-09-12 15:40:09] [INFO]: [User]-[Controller]-[Register]: Verification email sent (mecayor201@ishense.com)
+[2025-09-12 15:40:09] [INFO]: [User]-[Controller]-[Register]: User registered successfully (mecayor201@ishense.com)
+[2025-09-12 15:40:40] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (mecayor201@ishense.com)
+[2025-09-12 15:40:40] [INFO]: [Config]-[Token]-[generateEmailVerificationToken]: Generating email verification token for user (mecayor201@ishense.com)
+[2025-09-12 15:40:40] [INFO]: [Auth]-[Service]-[sendForgotPasswordEmail]: Created reset token for email to (mecayor201@ishense.com)
+[2025-09-12 15:40:42] [INFO]: [Auth]-[Service]-[sendForgotPasswordEmail]: Sending forgot password email to (mecayor201@ishense.com)
+[2025-09-12 15:41:32] [INFO]: [Auth]-[Controller]-[ResetPassword]: Token is required
+[2025-09-12 15:41:38] [INFO]: [Auth]-[Controller]-[ResetPassword]: Token is required
+[2025-09-12 15:42:01] [INFO]: [Auth]-[Controller]-[ResetPassword]: Token is required
+[2025-09-12 16:35:40] [INFO]: [User]-[Service]-[registerUser]: Registering user (miwosij701@ishense.com)
+[2025-09-12 16:35:40] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (miwosij701@ishense.com)
+[2025-09-12 16:35:41] [INFO]: [User]-[Service]-[registerUser]: User registered successfully (miwosij701@ishense.com)
+[2025-09-12 16:35:42] [INFO]: [Config]-[Token]-[hashPassword]: Password hashed successfully
+[2025-09-12 16:35:42] [INFO]: [User]-[Repository]-[createUser]: Creating user (miwosij701@ishense.com)
+[2025-09-12 16:35:42] [INFO]: [User]-[Controller]-[Register]: User created in DB (miwosij701@ishense.com)
+[2025-09-12 16:35:42] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (miwosij701@ishense.com)
+[2025-09-12 16:35:42] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (miwosij701@ishense.com)
+[2025-09-12 16:35:42] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (miwosij701@ishense.com)
+[2025-09-12 16:35:42] [INFO]: [User]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImVtYWlsIjoibWl3b3NpajcwMUBpc2hlbnNlLmNvbSIsImlhdCI6MTc1NzY4NDE0MiwiZXhwIjoxNzU3NzcwNTQyfQ.tIQha-dkqoujmmWQkfjJXylIAWfkQFVsT3LBsMEKNGo,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImVtYWlsIjoibWl3b3NpajcwMUBpc2hlbnNlLmNvbSIsImlhdCI6MTc1NzY4NDE0MiwiZXhwIjoxNzU4Mjg4OTQyfQ.MYByiXN2W6WylDOHRhxEPZrXVHxd5p6_Xi0jjjCdqlE)
+[2025-09-12 16:35:42] [INFO]: [User]-[Service]-[updateUser]: Updating user (13)
+[2025-09-12 16:35:42] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (13)
+[2025-09-12 16:35:42] [INFO]: [User]-[Service]-[updateUser]: User found (13)
+[2025-09-12 16:35:42] [INFO]: [User]-[Repository]-[updateUser]: Updating user (13)
+[2025-09-12 16:35:42] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (miwosij701@ishense.com)
+[2025-09-12 16:35:43] [INFO]: [Config]-[Token]-[generateEmailVerificationToken]: Generating email verification token for user (miwosij701@ishense.com)
+[2025-09-12 16:35:43] [INFO]: [Auth]-[Service]-[sendEmail]: Created verification token for email to (miwosij701@ishense.com)
+[2025-09-12 16:35:45] [INFO]: [Auth]-[Service]-[sendEmail]: Sending email to (miwosij701@ishense.com)
+[2025-09-12 16:35:45] [INFO]: [User]-[Controller]-[Register]: Verification email sent (miwosij701@ishense.com)
+[2025-09-12 16:35:45] [INFO]: [User]-[Controller]-[Register]: User registered successfully (miwosij701@ishense.com)
+[2025-09-12 16:36:37] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (miwosij701@ishense.com)
+[2025-09-12 16:36:37] [INFO]: [Config]-[Token]-[generateEmailVerificationToken]: Generating email verification token for user (miwosij701@ishense.com)
+[2025-09-12 16:36:37] [INFO]: [Auth]-[Service]-[sendForgotPasswordEmail]: Created reset token for email to (miwosij701@ishense.com)
+[2025-09-12 16:36:39] [INFO]: [Auth]-[Service]-[sendForgotPasswordEmail]: Sending forgot password email to (miwosij701@ishense.com)
+[2025-09-12 16:37:15] [INFO]: [Config]-[Token]-[validateToken]: Token validated successfully
+[2025-09-12 16:37:15] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (13)
+[2025-09-12 16:37:15] [INFO]: [Config]-[Token]-[hashPassword]: Password hashed successfully
+[2025-09-12 16:37:15] [INFO]: [User]-[Repository]-[updateUser]: Updating user (13)
+[2025-09-12 16:37:16] [INFO]: [Auth]-[Service]-[resetForgotPassword]: Password reset successfully for user (miwosij701@ishense.com)
+[2025-09-12 16:37:38] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (miwosij701@ishense.com)
+[2025-09-12 16:37:38] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (miwosij701@ishense.com)
+[2025-09-12 16:37:38] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (miwosij701@ishense.com)
+[2025-09-12 16:37:38] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
+[2025-09-12 16:37:43] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (miwosij701@ishense.com)
+[2025-09-12 16:37:43] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (miwosij701@ishense.com)
+[2025-09-12 16:37:43] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (miwosij701@ishense.com)
+[2025-09-12 16:37:43] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (miwosij701@ishense.com)
+[2025-09-12 16:37:43] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (miwosij701@ishense.com)
+[2025-09-12 16:37:43] [INFO]: [User]-[Service]-[updateUser]: Updating user (13)
+[2025-09-12 16:37:43] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (13)
+[2025-09-12 16:37:43] [INFO]: [User]-[Service]-[updateUser]: User found (13)
+[2025-09-12 16:37:43] [INFO]: [User]-[Repository]-[updateUser]: Updating user (13)
+[2025-09-12 16:37:43] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (miwosij701@ishense.com)
+[2025-09-12 16:38:02] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (13)
+[2025-09-12 16:38:02] [INFO]: [User]-[Repository]-[updateUser]: Updating user (13)
+[2025-09-12 16:38:03] [INFO]: [Auth]-[Service]-[verifyEmail]: Email verified successfully for user (miwosij701@ishense.com)
+[2025-09-12 16:38:47] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 16:38:47] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 16:38:47] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 16:38:47] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 16:38:58] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 16:38:58] [INFO]: [User]-[Service]-[updateUser]: Updating user (13)
+[2025-09-12 16:38:58] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (13)
+[2025-09-12 16:38:58] [INFO]: [User]-[Service]-[updateUser]: User found (13)
+[2025-09-12 16:38:58] [INFO]: [User]-[Repository]-[updateUser]: Updating user (13)
+[2025-09-12 16:39:00] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 16:39:00] [INFO]: [User]-[Service]-[updateUser]: Updating user (13)
+[2025-09-12 16:39:00] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (13)
+[2025-09-12 16:39:00] [INFO]: [User]-[Service]-[updateUser]: User found (13)
+[2025-09-12 16:39:00] [INFO]: [User]-[Repository]-[updateUser]: Updating user (13)
+[2025-09-12 16:39:06] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 16:39:06] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 16:39:06] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 16:39:06] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 16:39:08] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 16:39:08] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 16:39:08] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 16:39:08] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 16:39:09] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 16:39:09] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 16:39:09] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 16:39:09] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 16:47:43] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 16:47:43] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 16:47:45] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 16:47:45] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 16:47:45] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 16:47:45] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 16:47:45] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 16:47:45] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 16:47:45] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 16:47:45] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 16:51:25] [INFO]: [Auth]-[Controller]-[ResetPassword]: Token is required
+[2025-09-12 16:51:49] [INFO]: [Auth]-[Controller]-[ResetPassword]: Error occurred - TypeError: Cannot destructure property 'newPassword' of 'req.body' as it is undefined.
+[2025-09-12 16:56:38] [INFO]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-12 16:59:23] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 16:59:23] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 16:59:25] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 16:59:25] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 16:59:25] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 16:59:25] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 16:59:25] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 16:59:25] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 16:59:25] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 16:59:25] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 17:01:39] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 17:01:39] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 17:01:39] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 17:01:40] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 17:07:13] [INFO]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-12 17:07:40] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 17:07:40] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 17:07:40] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 17:07:42] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 17:07:42] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 17:07:52] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 17:07:52] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 17:07:52] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 17:07:52] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 20:03:43] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 20:03:43] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 20:03:45] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 20:03:45] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 20:03:45] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 20:03:45] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 20:03:45] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 20:03:45] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 20:03:45] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 20:03:45] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 20:04:14] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 20:04:14] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 20:04:14] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 20:04:14] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 20:04:33] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 20:04:34] [INFO]: [Config]-[Token]-[calculateTimeOfToken]: Blacklisted token with ttl=86352s
+[2025-09-12 20:04:34] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 20:04:34] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 20:04:34] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 20:04:34] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 20:04:41] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token is blacklisted
+[2025-09-12 20:06:36] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token is blacklisted
+[2025-09-12 22:41:08] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 22:41:08] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 22:41:10] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 22:41:10] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 22:41:10] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 22:41:10] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 22:41:10] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:41:10] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 22:41:10] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 22:41:10] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 22:41:11] [INFO]: [Auth]-[Controller]-[Login]: Error occurred - Error: Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +90543632XXXX
+[2025-09-12 22:47:16] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 22:47:16] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 22:47:17] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 22:47:17] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 22:47:17] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 22:47:17] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 22:47:17] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:47:18] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 22:47:18] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 22:47:18] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 22:47:18] [INFO]: [Auth]-[Controller]-[Login]: Error occurred - Error: 'From' +12065551234 is not a Twilio phone number or Short Code country mismatch
+[2025-09-12 22:49:39] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 22:49:39] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 22:49:40] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 22:49:40] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 22:49:40] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 22:49:40] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 22:49:40] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:49:40] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 22:49:40] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 22:49:40] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 22:49:40] [INFO]: [Auth]-[Controller]-[Login]: Error occurred - Error: 'From' +12065551234 is not a Twilio phone number or Short Code country mismatch
+[2025-09-12 22:50:22] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 22:50:22] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 22:50:22] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 22:50:22] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 22:50:22] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 22:50:22] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 22:50:22] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:50:23] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 22:50:23] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 22:50:23] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 22:50:23] [INFO]: [Auth]-[Controller]-[Login]: Error occurred - Error: 'From' +12065551234 is not a Twilio phone number or Short Code country mismatch
+[2025-09-12 22:57:24] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 22:57:24] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 22:57:26] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 22:57:26] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 22:57:26] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 22:57:26] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 22:57:26] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:57:26] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 22:57:26] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 22:57:27] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 22:57:27] [INFO]: [Auth]-[Controller]-[Login]: Error occurred - Error: 'From' +12065551234 is not a Twilio phone number or Short Code country mismatch
+[2025-09-12 22:58:13] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 22:58:13] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 22:58:14] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 22:58:14] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 22:58:14] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 22:58:14] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 22:58:14] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:58:14] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 22:58:14] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 22:58:15] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 22:59:13] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 22:59:13] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:59:13] [INFO]: [Auth]-[Controller]-[LoginPhone]: Invalid verification code
+[2025-09-12 22:59:26] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 22:59:26] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:59:26] [INFO]: [Auth]-[Controller]-[LoginPhone]: Invalid verification code
+[2025-09-12 22:59:49] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 22:59:49] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 22:59:49] [INFO]: [Auth]-[Controller]-[LoginPhone]: Invalid verification code
+[2025-09-12 23:02:54] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 23:02:54] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 23:02:56] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 23:02:56] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 23:02:56] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 23:02:56] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 23:02:56] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:02:56] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 23:02:56] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 23:02:56] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 23:03:11] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 23:03:11] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:03:11] [INFO]: [Auth]-[Controller]-[LoginPhone]: Invalid verification code
+[2025-09-12 23:03:25] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 23:03:25] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:03:25] [INFO]: [Auth]-[Controller]-[LoginPhone]: User phone verified successfully (admin@example.com)
+[2025-09-12 23:04:23] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:04:23] [INFO]: [Auth]-[Controller]-[sendVerificationPhone]: User phone number not found
+[2025-09-12 23:05:38] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:05:38] [INFO]: [Auth]-[Controller]-[sendVerificationPhone]: User phone number not found
+[2025-09-12 23:09:46] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 23:09:46] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 23:09:48] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 23:09:48] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 23:09:48] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 23:09:48] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 23:09:48] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:09:48] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 23:09:48] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 23:09:48] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 23:10:05] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:10:05] [INFO]: [User]-[Service]-[getAllUsers]: Fetching all users
+[2025-09-12 23:10:05] [INFO]: [User]-[Repository]-[findAllUsers]: Finding all users
+[2025-09-12 23:10:05] [INFO]: [User]-[Controller]-[GetAllUsers]: All users retrieved successfully
+[2025-09-12 23:10:13] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:10:13] [INFO]: [Auth]-[Controller]-[sendVerificationPhone]: User phone number not found
+[2025-09-12 23:18:11] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 23:18:11] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 23:18:13] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 23:18:13] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 23:18:13] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 23:18:13] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 23:18:13] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:18:13] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 23:18:13] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 23:18:13] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 23:20:48] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:20:48] [INFO]: [Auth]-[Controller]-[sendVerificationPhone]: User phone number not found
+[2025-09-12 23:25:32] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-12 23:25:32] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-12 23:25:34] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-12 23:25:34] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-12 23:25:34] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-12 23:25:34] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 23:25:34] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:25:35] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 23:25:35] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 23:25:35] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-12 23:25:47] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:25:47] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 23:25:47] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:25:47] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 23:25:47] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:25:47] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 23:25:47] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 23:25:48] [INFO]: [Auth]-[Controller]-[sendVerificationPhone]: Updated user (1) with verification code
+[2025-09-12 23:25:48] [INFO]: [Auth]-[Controller]-[sendVerificationPhone]: Sending verification code to phone number (+905436325192- Digital Code: 871884)
+[2025-09-12 23:26:19] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:26:19] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 23:26:19] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:26:19] [INFO]: [Auth]-[Controller]-[VerificationPhone]: Invalid verification code
+[2025-09-12 23:26:27] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:26:27] [INFO]: [User]-[Service]-[getUserById]: Fetching user (1)
+[2025-09-12 23:26:27] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:26:27] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 23:26:27] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:26:28] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 23:26:28] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 23:26:28] [INFO]: [Auth]-[Controller]-[VerificationPhone]: User phone verified successfully (admin@example.com)
+[2025-09-12 23:26:40] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-12 23:26:41] [INFO]: [Config]-[Token]-[calculateTimeOfToken]: Blacklisted token with ttl=86334s
+[2025-09-12 23:26:41] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-12 23:26:41] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-12 23:26:41] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-12 23:26:41] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-12 23:26:53] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token is blacklisted
+[2025-09-13 01:11:00] [INFO]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-13 01:11:16] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-13 01:11:16] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-13 01:11:18] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-13 01:11:18] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-13 01:11:18] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-13 01:11:18] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-13 01:11:18] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 01:11:18] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-13 01:11:18] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-13 01:11:19] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-13 01:11:40] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:11:40] [INFO]: [Product]-[Service]-[getAllProducts]: Fetching all products
+[2025-09-13 01:11:41] [INFO]: [Product]-[ProductRepository]-[findAllProducts]: Retrieved 6 products
+[2025-09-13 01:11:52] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:11:52] [INFO]: [Product]-[Service]-[getProductById]: Fetching product by id (1)
+[2025-09-13 01:11:52] [INFO]: [Product]-[ProductRepository]-[findProductById]: Product retrieved successfully (1)
+[2025-09-13 01:13:13] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:13:13] [INFO]: [Product]-[Service]-[getAllProducts]: Fetching all products
+[2025-09-13 01:13:13] [INFO]: [Product]-[ProductRepository]-[findAllProducts]: Retrieved 6 products
+[2025-09-13 01:14:21] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:14:21] [INFO]: [Product]-[Service]-[getProductById]: Fetching product by id (6)
+[2025-09-13 01:14:21] [INFO]: [Product]-[ProductRepository]-[findProductById]: Product retrieved successfully (6)
+[2025-09-13 01:14:30] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:14:30] [INFO]: [Product]-[Service]-[deleteProductById]: Deleting product by id (6)
+[2025-09-13 01:14:30] [INFO]: [Product]-[Repository]-[deleteProductById]: Deleting product by id (6)
+[2025-09-13 01:14:38] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:14:38] [INFO]: [Product]-[Service]-[getProductById]: Fetching product by id (6)
+[2025-09-13 01:14:39] [INFO]: [Product]-[ProductRepository]-[findProductById]: Product not found (6)
+[2025-09-13 01:14:39] [INFO]: [Product]-[ProductRepository]-[findProductById]: Error occurred - Error: Product not found
+[2025-09-13 01:14:39] [INFO]: [Product]-[Service]-[getProductById]:Error fetching product by id (6) - Error: Error retrieving product
+[2025-09-13 01:14:39] [INFO]: [Product]-[ProductController]-[getProductById]: Error occurred - Error: Error fetching product by id
+[2025-09-13 01:14:44] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:14:44] [INFO]: [Product]-[Service]-[getAllProducts]: Fetching all products
+[2025-09-13 01:14:44] [INFO]: [Product]-[ProductRepository]-[findAllProducts]: Retrieved 5 products
+[2025-09-13 01:15:02] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:15:02] [INFO]: [Product]-[Service]-[getProductById]: Fetching product by id (4)
+[2025-09-13 01:15:02] [INFO]: [Product]-[ProductRepository]-[findProductById]: Product retrieved successfully (4)
+[2025-09-13 01:16:18] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:16:18] [INFO]: [Customer]-[Service]-[getAllCustomers]: Getting all customers
+[2025-09-13 01:16:18] [INFO]: [Customer]-[Repository]-[findAllCustomers]: Finding all customers
+[2025-09-13 01:16:18] [INFO]: [Customer]-[Controller]-[getAllCustomers]: Retrieved all customers
+[2025-09-13 01:16:30] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:16:30] [INFO]: [Customer]-[Service]-[getCustomerById]: Getting customer by id (1)
+[2025-09-13 01:16:30] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (1)
+[2025-09-13 01:16:32] [INFO]: [Customer]-[Controller]-[getCustomerById]: Retrieved customer (1)
+[2025-09-13 01:24:08] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-13 01:24:08] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-13 01:24:10] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-13 01:24:10] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-13 01:24:10] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-13 01:24:10] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-13 01:24:10] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 01:24:10] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-13 01:24:10] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-13 01:24:11] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-13 01:26:44] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-13 01:26:44] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-13 01:26:46] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-13 01:26:46] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-13 01:26:46] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-13 01:26:46] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-13 01:26:46] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 01:26:46] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-13 01:26:46] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-13 01:26:47] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-13 01:27:15] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:27:15] [INFO]: [Product]-[ProductRepository]-[createProduct]: Product created successfully (7)
+[2025-09-13 01:27:15] [INFO]: [Product]-[Service]-[createProduct]: Product created successfully (7)
+[2025-09-13 01:27:29] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:27:29] [INFO]: [Product]-[Service]-[getAllProducts]: Fetching all products
+[2025-09-13 01:27:29] [INFO]: [Product]-[ProductRepository]-[findAllProducts]: Retrieved 6 products
+[2025-09-13 01:36:33] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-13 01:36:33] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-13 01:36:35] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-13 01:36:35] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-13 01:36:35] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-13 01:36:35] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-13 01:36:35] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 01:36:35] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-13 01:36:35] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-13 01:36:35] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-13 01:37:13] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:37:13] [INFO]: [Customer]-[Service]-[createCustomer]: Creating customer (asd@ewxa.com)
+[2025-09-13 01:37:13] [INFO]: [Customer]-[Repository]-[findCustomerByEmail]:Finding customer by email (asd@ewxa.com)
+[2025-09-13 01:37:13] [INFO]: [Customer]-[Repository]-[createCustomer]: Creating customer (asd@ewxa.com)
+[2025-09-13 01:37:14] [INFO]: [Customer]-[Controller]-[createCustomer]: Created new customer ([object Object])
+[2025-09-13 01:37:30] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:37:30] [INFO]: [Customer]-[Service]-[getAllCustomers]: Getting all customers
+[2025-09-13 01:37:30] [INFO]: [Customer]-[Repository]-[findAllCustomers]: Finding all customers
+[2025-09-13 01:37:30] [INFO]: [Customer]-[Controller]-[getAllCustomers]: Retrieved all customers
+[2025-09-13 01:37:39] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:37:39] [INFO]: [Customer]-[Service]-[getCustomerById]: Getting customer by id (3)
+[2025-09-13 01:37:39] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (3)
+[2025-09-13 01:37:40] [INFO]: [Customer]-[Controller]-[getCustomerById]: Retrieved customer (3)
+[2025-09-13 01:39:43] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:39:43] [INFO]: [Customer]-[Service]-[deleteCustomerById]: Deleting customer (3)
+[2025-09-13 01:39:43] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (3)
+[2025-09-13 01:39:44] [INFO]: [Customer]-[Repository]-[deleteCustomerById]: Deleting customer by id (3)
+[2025-09-13 01:39:44] [INFO]: [Customer]-[Service]-[deleteCustomerById]: Deleted customer (3)
+[2025-09-13 01:39:44] [INFO]: [Customer]-[Controller]-[deleteCustomer]: Deleted customer (3)
+[2025-09-13 01:39:51] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:39:51] [INFO]: [Customer]-[Service]-[getAllCustomers]: Getting all customers
+[2025-09-13 01:39:51] [INFO]: [Customer]-[Repository]-[findAllCustomers]: Finding all customers
+[2025-09-13 01:39:51] [INFO]: [Customer]-[Controller]-[getAllCustomers]: Retrieved all customers
+[2025-09-13 01:49:04] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-13 01:49:04] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-13 01:49:06] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-13 01:49:06] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-13 01:49:06] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-13 01:49:06] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-13 01:49:06] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 01:49:07] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-13 01:49:07] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-13 01:49:07] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-13 01:51:02] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:51:02] [INFO]: [Customer]-[Service]-[updateCustomer]: Updating customer (2)
+[2025-09-13 01:51:02] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (2)
+[2025-09-13 01:51:02] [INFO]: [Customer]-[Repository]-[updateCustomer]: Updating customer by id (2)
+[2025-09-13 01:51:03] [INFO]: [Customer]-[Controller]-[updateCustomer]: Updated customer (2)
+[2025-09-13 01:51:41] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:51:41] [INFO]: [Customer]-[Service]-[updateCustomer]: Updating customer (2)
+[2025-09-13 01:51:41] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (2)
+[2025-09-13 01:51:41] [INFO]: [Customer]-[Repository]-[updateCustomer]: Updating customer by id (2)
+[2025-09-13 01:51:41] [INFO]: [Customer]-[Controller]-[updateCustomer]: Updated customer (2)
+[2025-09-13 01:51:55] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:51:55] [INFO]: [Product]-[Service]-[getAllProducts]: Fetching all products
+[2025-09-13 01:51:55] [INFO]: [Product]-[ProductRepository]-[findAllProducts]: Retrieved 6 products
+[2025-09-13 01:52:15] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 01:52:15] [INFO]: [Product]-[Service]-[updateProduct]: Updating product (2)
+[2025-09-13 01:52:15] [INFO]: [Product]-[ProductRepository]-[updateProduct]: Updating product (2)
+[2025-09-13 01:52:15] [INFO]: [Product]-[Service]-[updateProduct]: Product updated successfully (2)
+[2025-09-13 03:04:26] [INFO]: [Auth]-[Middleware]-[RequestAuth]: No token
+[2025-09-13 03:04:42] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-13 03:04:42] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-13 03:04:44] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-13 03:04:44] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-13 03:04:44] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-13 03:04:44] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-13 03:04:44] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 03:04:44] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-13 03:04:44] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-13 03:04:45] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-13 03:04:57] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:04:57] [INFO]: [Transaction]-[Service]-[getAllTransactions]: Fetching all transactions
+[2025-09-13 03:04:57] [INFO]: [Transaction]-[Service]-[findAllTransactions]: Fetching all transactions
+[2025-09-13 03:05:32] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:05:32] [INFO]: [Transaction]-[Service]-[findTransactionById]: Fetching transaction (1)
+[2025-09-13 03:07:07] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:07:07] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (3)
+[2025-09-13 03:07:07] [INFO]: [Transaction]-[Service]-[createTransaction]: Verifying user (3)
+[2025-09-13 03:07:07] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (2)
+[2025-09-13 03:07:07] [INFO]: [Transaction]-[Service]-[createTransaction]: Verifying customer (2)
+[2025-09-13 03:07:07] [INFO]: [Transaction]-[Service]-[createTransaction]: Customer found (2)
+[2025-09-13 03:07:08] [INFO]: [Product]-[ProductRepository]-[createProduct]: Product created successfully (8)
+[2025-09-13 03:07:08] [INFO]: [Product]-[ProductRepository]-[createProduct]: Product created successfully (9)
+[2025-09-13 03:07:08] [INFO]: [Transaction]-[Service]-[createTransaction]: Products processed (2)
+[2025-09-13 03:07:08] [INFO]: [Transaction]-[Service]-[createTransaction]: Creating transaction for user (3) with customer (2) and products (2)
+[2025-09-13 03:07:08] [INFO]: [Transaction]-[Service]-[createTransaction]: Creating transaction for user (3)
+[2025-09-13 03:07:09] [INFO]: [Transaction]-[Service]-[createTransaction]: Transaction created successfully
+[2025-09-13 03:07:09] [INFO]: [Transaction]-[Controller]-[createTransaction]: Transaction created successfully
+[2025-09-13 03:07:19] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:07:19] [INFO]: [Transaction]-[Service]-[findTransactionById]: Fetching transaction (1)
+[2025-09-13 03:07:25] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:07:25] [INFO]: [Transaction]-[Service]-[getAllTransactions]: Fetching all transactions
+[2025-09-13 03:07:25] [INFO]: [Transaction]-[Service]-[findAllTransactions]: Fetching all transactions
+[2025-09-13 03:09:57] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:09:57] [INFO]: [Transaction]-[Controller]-[createTransaction]: No customer information provided
+[2025-09-13 03:13:03] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:13:03] [INFO]: [Customer]-[Service]-[getAllCustomers]: Getting all customers
+[2025-09-13 03:13:03] [INFO]: [Customer]-[Repository]-[findAllCustomers]: Finding all customers
+[2025-09-13 03:13:05] [INFO]: [Customer]-[Controller]-[getAllCustomers]: Retrieved all customers
+[2025-09-13 03:13:39] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:13:39] [INFO]: [Transaction]-[Controller]-[createTransaction]: No customer information provided
+[2025-09-13 03:16:59] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-13 03:16:59] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-13 03:17:01] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-13 03:17:01] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-13 03:17:01] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-13 03:17:01] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-13 03:17:01] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 03:17:01] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-13 03:17:01] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-13 03:17:01] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-13 03:17:35] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:17:35] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 03:17:36] [INFO]: [Transaction]-[Service]-[createTransaction]: Verifying user (1)
+[2025-09-13 03:17:36] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (1)
+[2025-09-13 03:17:36] [INFO]: [Transaction]-[Service]-[createTransaction]: Verifying customer (1)
+[2025-09-13 03:17:36] [INFO]: [Transaction]-[Service]-[createTransaction]: Customer found (1)
+[2025-09-13 03:17:36] [INFO]: [Product]-[ProductRepository]-[createProduct]:Product create failed - PrismaClientKnownRequestError: 
+Invalid `prisma.product.create()` invocation:
 
 
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:00:21] [INFO]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:00:21] [INFO]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:02:36] [INFO]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:02:36] [INFO]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:04:24] [INFO]: Service: Error finding user by email (grkm@gr.com) - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-08-31 01:04:24] [INFO]: Login: Error occurred - PrismaClientUnknownRequestError: 
-Invalid `prisma.user.findUnique()` invocation:
-
-
-Error occurred during query execution:
-ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(PostgresError { code: "0A000", message: "cached plan must not change result type", severity: "ERROR", detail: None, column: None, hint: None }), transient: false })
-[2025-09-03 12:58:21] [INFO]: [Auth]-[Service]-[registerUser]: Registering user (deneme@ex.com)
-[2025-09-03 12:58:21] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (deneme@ex.com)
-[2025-09-03 12:58:22] [INFO]: [Auth]-[Service]-[registerUser]: User registered successfully (deneme@ex.com)
-[2025-09-03 12:58:22] [INFO]: [Auth]-[Repository]-[createUser]: Creating user in DB (deneme@ex.com)
-[2025-09-03 12:58:22] [INFO]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
+Foreign key constraint violated on the constraint: `Product_productTypeId_fkey`
+[2025-09-13 03:17:36] [INFO]: [Transaction]-[Service]-[createTransaction]: Error creating transaction - Error: Error creating product
+[2025-09-13 03:18:58] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
+[2025-09-13 03:18:58] [INFO]: [User]-[Repository]-[findUserByEmail]: Finding user by email (admin@example.com)
+[2025-09-13 03:18:59] [INFO]: [Config]-[Token]-[generateTokens]: Generating tokens for user (admin@example.com)
+[2025-09-13 03:18:59] [INFO]: [Config]-[Token]-[generateTokens]: Tokens generated successfully for user (admin@example.com)
+[2025-09-13 03:18:59] [INFO]: [Config]-[Token]-[generateTokens]: Refresh token generated successfully for user (admin@example.com)
+[2025-09-13 03:18:59] [INFO]: [User]-[Service]-[updateUser]: Updating user (1)
+[2025-09-13 03:18:59] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 03:18:59] [INFO]: [User]-[Service]-[updateUser]: User found (1)
+[2025-09-13 03:18:59] [INFO]: [User]-[Repository]-[updateUser]: Updating user (1)
+[2025-09-13 03:18:59] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (admin@example.com)
+[2025-09-13 03:19:11] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:19:11] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (1)
+[2025-09-13 03:19:11] [INFO]: [Transaction]-[Service]-[createTransaction]: Verifying user (1)
+[2025-09-13 03:19:11] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (1)
+[2025-09-13 03:19:11] [INFO]: [Transaction]-[Service]-[createTransaction]: Verifying customer (1)
+[2025-09-13 03:19:11] [INFO]: [Transaction]-[Service]-[createTransaction]: Customer found (1)
+[2025-09-13 03:19:11] [INFO]: [Product]-[ProductRepository]-[createProduct]: Product created successfully (11)
+[2025-09-13 03:19:11] [INFO]: [Transaction]-[Service]-[createTransaction]: Products processed (1)
+[2025-09-13 03:19:11] [INFO]: [Transaction]-[Service]-[createTransaction]: Creating transaction for user (1) with customer (1) and products (1)
+[2025-09-13 03:19:11] [INFO]: [Transaction]-[Service]-[createTransaction]: Creating transaction for user (1)
+[2025-09-13 03:19:12] [INFO]: [Transaction]-[Service]-[createTransaction]: Transaction created successfully
+[2025-09-13 03:19:12] [INFO]: [Transaction]-[Controller]-[createTransaction]: Transaction created successfully
+[2025-09-13 03:21:05] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
+[2025-09-13 03:21:05] [INFO]: [User]-[Repository]-[findUserById]: Finding user by id (2)
+[2025-09-13 03:21:05] [INFO]: [Transaction]-[Service]-[createTransaction]: Verifying user (2)
+[2025-09-13 03:21:05] [INFO]: [Customer]-[Repository]-[findCustomerById]: Finding customer by id (undefined)
+[2025-09-13 03:21:05] [INFO]: [Customer]-[Repository]-[findCustomerById]: Error finding customer by id (undefined) - PrismaClientValidationError: 
+Invalid `prisma.customer.findUnique()` invocation:
 
 {
-  data: {
-    email: "deneme@ex.com",
-    password: "$2b$10$gHsI6mJBCWSTX0aIyRz1aeRyfafc8UQpG50i3NiIEt5t31yo77LFW",
-    userTypeId: 1,
-    username: "deneme",
-    phone: 3242355,
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
+  where: {
+    id: undefined,
+?   email?: String,
+?   AND?: CustomerWhereInput | CustomerWhereInput[],
+?   OR?: CustomerWhereInput[],
+?   NOT?: CustomerWhereInput | CustomerWhereInput[],
+?   nameSurname?: StringFilter | String,
+?   phone?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   address?: StringNullableFilter | String | Null,
+?   customerTypeId?: IntFilter | Int,
+?   userId?: IntFilter | Int,
+?   customerType?: CustomerTypeScalarRelationFilter | CustomerTypeWhereInput,
+?   user?: UserScalarRelationFilter | UserWhereInput,
+?   transactions?: TransactionListRelationFilter
   }
 }
 
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 12:59:28] [INFO]: [Auth]-[Service]-[registerUser]: Registering user (deneme@ex.com)
-[2025-09-03 12:59:28] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (deneme@ex.com)
-[2025-09-03 12:59:28] [INFO]: [Auth]-[Service]-[registerUser]: User registered successfully (deneme@ex.com)
-[2025-09-03 12:59:28] [INFO]: [Auth]-[Repository]-[createUser]: Creating user in DB (deneme@ex.com)
-[2025-09-03 12:59:28] [INFO]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "deneme@ex.com",
-    password: "$2b$10$2p7vju8HinCy9MP3PVNeseA2zb3pphvaOGRNbP0S/D2GuTcd0pR/u",
-    userTypeId: 1,
-    username: "deneme",
-    phone: "qweqwe",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 12:59:36] [INFO]: [Auth]-[Service]-[registerUser]: Registering user (deneme@ex.com)
-[2025-09-03 12:59:36] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (deneme@ex.com)
-[2025-09-03 12:59:37] [INFO]: [Auth]-[Service]-[registerUser]: User registered successfully (deneme@ex.com)
-[2025-09-03 12:59:37] [INFO]: [Auth]-[Repository]-[createUser]: Creating user in DB (deneme@ex.com)
-[2025-09-03 12:59:37] [INFO]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "deneme@ex.com",
-    password: "$2b$10$zo2IW6WBSdUz.A3BgOIOQOSk25z7c2nVqH9DMPAl5HT2n66KUHlJm",
-    userTypeId: 1,
-    username: "deneme",
-    phone: "3434",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 13:04:48] [INFO]: [Auth]-[Service]-[registerUser]: Registering user (deneme@example.com)
-[2025-09-03 13:04:48] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (deneme@example.com)
-[2025-09-03 13:04:50] [INFO]: [Auth]-[Service]-[registerUser]: User registered successfully (deneme@example.com)
-[2025-09-03 13:04:50] [INFO]: [Auth]-[Repository]-[createUser]: Creating user in DB (deneme@example.com)
-[2025-09-03 13:04:50] [INFO]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "deneme@example.com",
-    password: "$2b$10$15TEKlMDZ6ySljT4qL5KNeTaOUX/GB5AraP9Lv6.pfcCUoxZkiN8e",
-    userTypeId: 1,
-    username: "deneme",
-    phone: "123123",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 13:06:59] [INFO]: [Auth]-[Service]-[registerUser]: Registering user (vn@example.com)
-[2025-09-03 13:06:59] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (vn@example.com)
-[2025-09-03 13:06:59] [INFO]: [Auth]-[Service]-[registerUser]: User registered successfully (vn@example.com)
-[2025-09-03 13:06:59] [INFO]: [Auth]-[Repository]-[createUser]: Creating user in DB (vn@example.com)
-[2025-09-03 13:06:59] [INFO]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "vn@example.com",
-    password: "$2b$10$RWTrBbDZios5NGZeGdaG1e6RVmBDtGnuUVWhnA1YVVW0vyyGK1Rsi",
-    userTypeId: 1,
-    username: "vn",
-    phone: "123123",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 13:13:34] [INFO]: [Auth]-[Service]-[registerUser]: Registering user (war@ease)
-[2025-09-03 13:13:34] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (war@ease)
-[2025-09-03 13:13:36] [INFO]: [Auth]-[Service]-[registerUser]: User registered successfully (war@ease)
-[2025-09-03 13:13:36] [INFO]: [Auth]-[Repository]-[createUser]: Creating user in DB (war@ease)
-[2025-09-03 13:13:36] [INFO]: [Auth]-[Controller]-[Register]: Error occurred - PrismaClientValidationError: 
-Invalid `prisma.user.create()` invocation:
-
-{
-  data: {
-    email: "war@ease",
-    password: "$2b$10$Y3dYZTaQmsAHasVxRrA5jO6fDyNJIzNa449fOy1MrlrlpexYzSzV6",
-    userTypeId: 1,
-    username: "war",
-    phone: "12312",
-    ~~~~~
-?   id?: Int,
-?   accessToken?: String | Null,
-?   refreshToken?: String | Null,
-?   createdAt?: DateTime,
-?   transactions?: TransactionUncheckedCreateNestedManyWithoutUserInput,
-?   customers?: CustomerUncheckedCreateNestedManyWithoutUserInput
-  }
-}
-
-Unknown argument `phone`. Available options are marked with ?.
-[2025-09-03 13:36:51] [INFO]: [Auth]-[Service]-[registerUser]: Registering user (ema@ema)
-[2025-09-03 13:36:51] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (ema@ema)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Service]-[registerUser]: User registered successfully (ema@ema)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Repository]-[createUser]: Creating user in DB (ema@ema)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Controller]-[Register]: User created in DB (ema@ema)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (ema@ema)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (ema@ema)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (ema@ema)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJlbWFAZW1hIiwiaWF0IjoxNzU2ODk1ODEzLCJleHAiOjE3NTY5ODIyMTN9.bAj0fWWuRndOHDUUwpje4T41MLuvYhlscoSzjJoQroE,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJlbWFAZW1hIiwiaWF0IjoxNzU2ODk1ODEzLCJleHAiOjE3NTc1MDA2MTN9.8oDKYFiEOVfk8GUee8iQTLjbYcf6v6cLmGZ_HRZ7pgg)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Service]-[updateUser]: Updating user (5)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Service]-[updateUser]: User found (5)
-[2025-09-03 13:36:53] [INFO]: [Auth]-[Repository]-[updateUser]:Updating user in DB (5)
-[2025-09-03 13:36:54] [INFO]: [Auth]-[Controller]-[Register]: User registered successfully (ema@ema)
-[2025-09-03 13:38:13] [INFO]: [Auth]-[Middleware]-[RequestAuth]: No token
-[2025-09-03 14:28:50] [INFO]: [Auth]-[Middleware]-[RequestAuth]: No token
-[2025-09-03 14:33:55] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (ema@ema)
-[2025-09-03 14:33:55] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (ema@ema)
-[2025-09-03 14:33:57] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (ema@ema)
-[2025-09-03 14:33:57] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (ema@ema)
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (ema@ema)
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (ema@ema)
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (ema@ema)
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (ema@ema)
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Service]-[updateUser]: Updating user (5)
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Service]-[updateUser]: User found (5)
-[2025-09-03 14:35:05] [INFO]: [Auth]-[Repository]-[updateUser]:Updating user in DB (5)
-[2025-09-03 14:35:06] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (ema@ema)
-[2025-09-03 14:35:58] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:36:47] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (admin@example.com)
-[2025-09-03 14:36:47] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (admin@example.com)
-[2025-09-03 14:36:47] [INFO]: [Auth]-[Service]-[loginUser]: Invalid password (admin@example.com)
-[2025-09-03 14:36:47] [INFO]: [Auth]-[Controller]-[Login]:: Error occurred - Error: Invalid password
-[2025-09-03 14:40:48] [INFO]: [Auth]-[Service]-[registerUser]: Registering user (grkm-admin@example.com)
-[2025-09-03 14:40:48] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (grkm-admin@example.com)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Service]-[registerUser]: User registered successfully (grkm-admin@example.com)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Repository]-[createUser]: Creating user in DB (grkm-admin@example.com)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Controller]-[Register]: User created in DB (grkm-admin@example.com)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (grkm-admin@example.com)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (grkm-admin@example.com)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (grkm-admin@example.com)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Controller]-[Register]:Tokens created (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJncmttLWFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzU2ODk5NjUwLCJleHAiOjE3NTY5ODYwNTB9.3XuAHVRYI8hGYNJUCAJ0pNj1kpCII7EHKQwVxbeM_lM,eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJncmttLWFkbWluQGV4YW1wbGUuY29tIiwiaWF0IjoxNzU2ODk5NjUwLCJleHAiOjE3NTc1MDQ0NTB9.7dvdi3dgKrIuMPcz1fRvUe2nZLg-oZSs0mndSsAKx0I)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Service]-[updateUser]: Updating user (6)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Service]-[updateUser]: User found (6)
-[2025-09-03 14:40:50] [INFO]: [Auth]-[Repository]-[updateUser]:Updating user in DB (6)
-[2025-09-03 14:40:51] [INFO]: [Auth]-[Controller]-[Register]: User registered successfully (grkm-admin@example.com)
-[2025-09-03 14:41:17] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:41:20] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:41:22] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:57:03] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (grkm-admin@example.com)
-[2025-09-03 14:57:03] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (grkm-admin@example.com)
-[2025-09-03 14:57:05] [INFO]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (grkm-admin@example.com)
-[2025-09-03 14:57:05] [INFO]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (grkm-admin@example.com)
-[2025-09-03 14:57:05] [INFO]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (grkm-admin@example.com)
-[2025-09-03 14:57:05] [INFO]: [Auth]-[Service]-[updateUser]: Updating user (6)
-[2025-09-03 14:57:05] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
-[2025-09-03 14:57:05] [INFO]: [Auth]-[Service]-[updateUser]: User found (6)
-[2025-09-03 14:57:05] [INFO]: [Auth]-[Repository]-[updateUser]:Updating user in DB (6)
-[2025-09-03 14:57:05] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (grkm-admin@example.com)
-[2025-09-03 14:57:40] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:57:46] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 14:57:50] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Invalid token - JsonWebTokenError: jwt malformed
-[2025-09-03 15:00:28] [INFO]: [Auth]-[Service]-[loginUser]: Logging in user (grkm-admin@example.com)
-[2025-09-03 15:00:28] [INFO]: [Auth]-[Repository]-[findUserByEmail]: Finding user by email in DB (grkm-admin@example.com)
-[2025-09-03 15:00:30] [INFO]: [Auth]-[Service]-[generateTokens]: Generating tokens for user (grkm-admin@example.com)
-[2025-09-03 15:00:30] [INFO]: [Auth]-[Service]-[generateTokens]: Tokens generated successfully for user (grkm-admin@example.com)
-[2025-09-03 15:00:30] [INFO]: [Auth]-[Service]-[generateTokens]: Refresh token generated successfully for user (grkm-admin@example.com)
-[2025-09-03 15:00:30] [INFO]: [Auth]-[Service]-[updateUser]: Updating user (6)
-[2025-09-03 15:00:30] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
-[2025-09-03 15:00:30] [INFO]: [Auth]-[Service]-[updateUser]: User found (6)
-[2025-09-03 15:00:30] [INFO]: [Auth]-[Repository]-[updateUser]:Updating user in DB (6)
-[2025-09-03 15:00:30] [INFO]: [Auth]-[Controller]-[Login]: User logged in successfully (grkm-admin@example.com)
-[2025-09-03 15:00:56] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:00:56] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:01:09] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:01:09] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:01:12] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:01:12] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:01:24] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:01:24] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:01:27] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:01:27] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:14:07] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:14:07] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:14:08] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:14:08] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:14:09] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:14:09] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:14:21] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:14:21] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (6)
-[2025-09-03 15:14:21] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
-[2025-09-03 15:14:22] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:14:32] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:14:32] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (6)
-[2025-09-03 15:14:32] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
-[2025-09-03 15:14:32] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:14:34] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:14:34] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (6)
-[2025-09-03 15:14:34] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (6)
-[2025-09-03 15:14:34] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (6)
-[2025-09-03 15:17:00] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:17:00] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (2)
-[2025-09-03 15:17:00] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (2)
-[2025-09-03 15:17:02] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (2)
-[2025-09-03 15:17:07] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:17:07] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (5)
-[2025-09-03 15:17:07] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
-[2025-09-03 15:17:07] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (5)
-[2025-09-03 15:17:13] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:17:13] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (3)
-[2025-09-03 15:17:13] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (3)
-[2025-09-03 15:17:13] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (3)
-[2025-09-03 15:25:35] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:25:35] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (3)
-[2025-09-03 15:25:35] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (3)
-[2025-09-03 15:25:37] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (3)
-[2025-09-03 15:27:24] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:27:24] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (5)
-[2025-09-03 15:27:24] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
-[2025-09-03 15:27:25] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (5)
-[2025-09-03 15:27:28] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:27:28] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (8)
-[2025-09-03 15:27:28] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (8)
-[2025-09-03 15:27:28] [INFO]: [Auth]-[Service]-[getUserById]: User not found (8)
-[2025-09-03 15:27:28] [INFO]: [Auth]-[Controller]-[GetUserProfile]: Error occurred - Error: User not found
-[2025-09-03 15:27:31] [INFO]: [Auth]-[Middleware]-[RequestAuth]: Token verified successfully
-[2025-09-03 15:27:31] [INFO]: [Auth]-[Service]-[getUserById]: Fetching user (5)
-[2025-09-03 15:27:31] [INFO]: [Auth]-[Repository]-[findUserById]:Finding user by id in DB (5)
-[2025-09-03 15:27:31] [INFO]: [Auth]-[Controller]-[GetUserProfile]: User profile retrieved successfully (5)
+Argument `where` of type CustomerWhereUniqueInput needs at least one of `id` or `email` arguments. Available options are marked with ?.
+[2025-09-13 03:21:05] [INFO]: [Transaction]-[Service]-[createTransaction]: Verifying customer (undefined)
+[2025-09-13 03:21:05] [INFO]: [Transaction]-[Service]-[createTransaction]: Customer not found (undefined)
+[2025-09-13 03:21:05] [INFO]: [Customer]-[Repository]-[createCustomer]: Creating customer (ait@gd.com)
+[2025-09-13 03:21:05] [INFO]: [Transaction]-[Service]-[createTransaction]: Creating new customer
+[2025-09-13 03:21:05] [INFO]: [Transaction]-[Service]-[createTransaction]: Customer created (4)
+[2025-09-13 03:21:05] [INFO]: [Product]-[ProductRepository]-[createProduct]: Product created successfully (12)
+[2025-09-13 03:21:05] [INFO]: [Transaction]-[Service]-[createTransaction]: Products processed (1)
+[2025-09-13 03:21:05] [INFO]: [Transaction]-[Service]-[createTransaction]: Creating transaction for user (2) with customer (4) and products (1)
+[2025-09-13 03:21:05] [INFO]: [Transaction]-[Service]-[createTransaction]: Creating transaction for user (2)
+[2025-09-13 03:21:06] [INFO]: [Transaction]-[Service]-[createTransaction]: Transaction created successfully
+[2025-09-13 03:21:06] [INFO]: [Transaction]-[Controller]-[createTransaction]: Transaction created successfully

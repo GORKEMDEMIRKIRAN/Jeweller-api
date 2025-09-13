@@ -1,12 +1,10 @@
 
 
 import logger from '../utils/logger.js';
-import { PrismaClient } from '@prisma/client';
-
 import type {CreateCustomerInputProps,UpdateCustomerInputProps} from '../types/customerTypes.js';
 
 
-const prisma=new PrismaClient();
+import prisma from './lib/prisma.js';
 
 /*
     Database functions 
@@ -17,9 +15,19 @@ const prisma=new PrismaClient();
     5-deleteCustomerById   = Delete customer by ID
     6-createCustomer       = Create new customer
     7-updateCustomer       = Update customer by ID
+    8-deleteAllCustomersByUserId   = Delete all customers (for testing purposes)
  */
 
-
+export async function deleteAllCustomersByUserId(userId:number){
+    try{
+        logger.info(`[Customer]-[Repository]-[deleteAllCustomersByUserId]: Deleting all customers by user id (${userId})`);
+        return await prisma.customer.deleteMany({
+            where: { userId }
+        });
+    }catch(error){
+        logger.error(`[Customer]-[Repository]-[deleteAllCustomersByUserId]: Error deleting all customers by user id (${userId}) - ${error}`);
+    }
+}
 //----------------------------------------------------------------------------------------
 export async function findAllCustomers(){
     try{
