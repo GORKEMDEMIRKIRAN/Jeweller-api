@@ -5,14 +5,20 @@ pipeline {
     agent any
 
     stages {
+        // stage('Checkout Source Code') {
+        //     steps {
+        //         script {
+        //             // GitHub Personal Access Token (PAT) ile kimlik doğrulama
+        //             withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+        //                 sh "git clone https://oauth2:${GITHUB_TOKEN}@github.com/GORKEMDEMIRKIRAN/Jeweller-api.git"
+        //             }
+        //         }
+        //     }
+        // }
         stage('Checkout Source Code') {
             steps {
-                script {
-                    // GitHub Personal Access Token (PAT) ile kimlik doğrulama
-                    withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
-                        sh "git clone https://oauth2:${GITHUB_TOKEN}@github.com/GORKEMDEMIRKIRAN/Jeweller-api.git"
-                    }
-                }
+                // Jenkins, Git SCM ayarlarındaki 'github-pat-scm' credential'ı kullanacak
+                checkout scm
             }
         }
         // Docker imajını oluştur ve Docker Hub'a login ol
