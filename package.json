@@ -5,12 +5,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "prisma:generate": "prisma generate",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
-    "dev": "nodemon --watch './**/*.ts' --exec \"npm run build && node dist/server.js\"",
-    "develop": "nodemon --watch \"./src/**/*.ts\" --exec \"ts-node src/server.ts\"",
+    "prisma:generate": "prisma generate", 
     "build": "npm run prisma:generate && tsc",
+    "start": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch './**/*.ts' --exec \"npm run build && node dist/server.js\"",
+    "develop": "nodemon --watch \"./src/**/*.ts\" --exec \"node --loader ts-node/esm src/server.ts\"",
     "seed": "node dist/utils/runSeed.js"
   },
   "keywords": [],

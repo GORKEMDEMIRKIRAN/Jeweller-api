@@ -1,0 +1,37 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: borse-web-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: borse-web-api
+  template:
+    metadata:
+      labels:
+        app: borse-web-api
+    spec:
+      containers:
+        - name: borse-web-api
+          image: dmrkrn/borse-web-api:latest  # Docker Hub'daki imaj adını yaz!
+          ports:
+            - containerPort: 4000
+          envFrom:
+            - secretRef:
+                name: borse-web-api-env # (Opsiyonel: .env için K8s Secret kullanabilirsin)
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: borse-web-api-service
+spec:
+  selector:
+    app: borse-web-api
+  ports:
+    - protocol: TCP
+      port: 4000
+      targetPort: 4000
+  type: LoadBalancer # Dışarıya port açmak için NodePort veya LoadBalancer kullanabilirsin
+  # Eğer dışarıdan doğrudan 4000 portu ile erişmek istersen, type: LoadBalancer veya Ingress kullanmalısın.
