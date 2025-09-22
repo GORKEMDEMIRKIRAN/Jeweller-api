@@ -28,9 +28,10 @@ pipeline {
                     // Docker Hub kimlik bilgileri ile login ol
                     withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKERHUB_USER', passwordVariable: 'DOCKERHUB_PASS')]) {
                         sh '''
-                        echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
-                        docker build -t dmrkrn/borse-web-api:latest .
-                        docker push dmrkrn/borse-web-api:latest
+                        # docker komutunun tam yolunu kullandık
+                        echo $DOCKERHUB_PASS | /usr/bin/docker login -u $DOCKERHUB_USER --password-stdin
+                        /usr/bin/docker build -t dmrkrn/borse-web-api:latest .
+                        /usr/bin/docker push dmrkrn/borse-web-api:latest
                         '''
                     }
                 }
