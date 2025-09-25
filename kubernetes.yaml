@@ -15,12 +15,12 @@ spec:
     spec:
       containers:
         - name: borse-web-api
-          image: dmrkrn/borse-web-api:latest  # Docker Hub'daki imaj adını yaz!
+          image: dmrkrn/borse-web-api:latest  # Docker Hub image name
           ports:
             - containerPort: 4000
           envFrom:
             - secretRef:
-                name: borse-web-api-env # (Opsiyonel: .env için K8s Secret kullanabilirsin)
+                name: borse-web-api-env # (Optional: You can use K8s Secret for .env variables)
 ---
 apiVersion: v1
 kind: Service
@@ -33,5 +33,5 @@ spec:
     - protocol: TCP
       port: 4000
       targetPort: 4000
-  type: LoadBalancer # Dışarıya port açmak için NodePort veya LoadBalancer kullanabilirsin
-  # Eğer dışarıdan doğrudan 4000 portu ile erişmek istersen, type: LoadBalancer veya Ingress kullanmalısın.
+  type: LoadBalancer # To expose the port externally, you can use NodePort or LoadBalancer
+  # If you want to access port 4000 directly from outside, you should use type: LoadBalancer or Ingress.
