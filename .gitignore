@@ -4,3 +4,5 @@ dist/
 generated
 logs/
 prisma/migrations/
+
+.vercel
