@@ -8,3 +8,4 @@ app.listen(config.port, () => {
 });
 
 
+export default app;
