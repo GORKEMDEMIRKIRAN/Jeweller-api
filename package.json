@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "prisma:generate": "prisma generate", 
     "build": "npm run prisma:generate && tsc",
