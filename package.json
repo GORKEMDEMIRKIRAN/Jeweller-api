@@ -12,8 +12,8 @@
     "dev": "nodemon --watch './**/*.ts' --exec \"npm run build && node dist/server.js\"",
     "develop": "nodemon --watch \"./src/**/*.ts\" --exec \"node --loader ts-node/esm src/server.ts\"",
     "seed": "node dist/utils/runSeed.js",
-    "postinstall": "prisma generate", 
-    "vercel-build": "echo 'BUILD STARTING' && tsc && echo 'TSC COMPLETED' && ls -la"
+    "postinstall": "echo 'POSTINSTALL STARTING' && prisma generate && echo 'PRISMA DONE' && tsc && echo 'TYPESCRIPT DONE' && ls -la dist/",
+    "vercel-build": "echo 'VERCEL BUILD CALLED'"
   },
   "keywords": [],
   "author": "",
@@ -53,6 +53,7 @@
     "@types/yamljs": "^0.2.34",
     "nodemon": "^3.1.10",
     "prisma": "^6.15.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
   }
 }
