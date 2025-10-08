@@ -12,8 +12,8 @@
     "dev": "nodemon --watch './**/*.ts' --exec \"npm run build && node dist/server.js\"",
     "develop": "nodemon --watch \"./src/**/*.ts\" --exec \"node --loader ts-node/esm src/server.ts\"",
     "seed": "node dist/utils/runSeed.js",
-    "postinstall": "prisma generate",
-    "vercel-build": "echo 'Starting build...' && tsc && echo 'TypeScript compiled' && ls -la && echo 'Contents of dist:' && ls -la dist/ && echo 'Build completed'"
+    "postinstall": "echo 'POSTINSTALL BUILD STARTING' && prisma generate && echo 'PRISMA DONE' && tsc && echo 'TYPESCRIPT DONE' && ls -la dist/ && echo 'POSTINSTALL BUILD COMPLETED'",
+    "vercel-build": "echo 'Vercel build called'"
   },
   "keywords": [],
   "author": "",
