@@ -1,27 +1,28 @@
 export default async function handler(req, res) {
+    const debugInfo = {
+        timestamp: new Date().toISOString(),
+        url: req.url,
+        method: req.method,
+        cwd: process.cwd()
+    };
+    
     try {
-        console.log('=== DEBUG START ===');
-        console.log('Request URL:', req.url);
-        console.log('Request Method:', req.method);
-        console.log('Working Directory:', process.cwd());
+        debugInfo.step = 'Starting file system check';
         
-        // File system kontrolü
         const fs = await import('fs');
         const path = await import('path');
         
         const serverPath = path.resolve(process.cwd(), 'dist', 'server.js');
-        console.log('Looking for server.js at:', serverPath);
+        debugInfo.serverPath = serverPath;
+        debugInfo.serverExists = fs.existsSync(serverPath);
         
-        const serverExists = fs.existsSync(serverPath);
-        console.log('Server.js exists:', serverExists);
-        
-        if (serverExists) {
-            console.log('Attempting to import server.js...');
+        if (debugInfo.serverExists) {
+            debugInfo.step = 'Attempting import';
             const { default: app } = await import('../dist/server.js');
-            console.log('Import successful, app type:', typeof app);
+            debugInfo.appType = typeof app;
             
             if (typeof app === 'function') {
-                console.log('Calling app function...');
+                debugInfo.step = 'Calling app function';
                 return app(req, res);
             } else {
                 throw new Error(`Expected function, got ${typeof app}`);
@@ -31,15 +32,12 @@ export default async function handler(req, res) {
         }
         
     } catch (error) {
-        console.error('=== ERROR ===');
-        console.error('Error message:', error.message);
-        console.error('Error stack:', error.stack);
+        debugInfo.error = error.message;
+        debugInfo.stack = error.stack;
         
         return res.status(500).json({
-            error: 'Handler failed',
-            message: error.message,
-            cwd: process.cwd(),
-            timestamp: new Date().toISOString()
+            debug: debugInfo,
+            error: 'Handler failed'
         });
     }
 }
