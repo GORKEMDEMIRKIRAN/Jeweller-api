@@ -13,7 +13,7 @@
     "develop": "nodemon --watch \"./src/**/*.ts\" --exec \"node --loader ts-node/esm src/server.ts\"",
     "seed": "node dist/utils/runSeed.js",
     "postinstall": "prisma generate",
-    "vercel-build": "echo 'Starting Vercel build...' && tsc && echo 'TypeScript compiled' && ls -la dist/ && echo 'Copying dist to root...' && cp -r dist/* . && echo 'Files copied' && ls -la server.js app.js && echo 'Vercel build completed'"
+    "vercel-build": "echo 'Building...' && tsc && echo 'Copying to root...' && cp -r dist/* . && echo 'Files in root:' && ls -la server.js && echo 'Build complete'"
   },
   "keywords": [],
   "author": "",
