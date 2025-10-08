@@ -12,8 +12,8 @@
     "dev": "nodemon --watch './**/*.ts' --exec \"npm run build && node dist/server.js\"",
     "develop": "nodemon --watch \"./src/**/*.ts\" --exec \"node --loader ts-node/esm src/server.ts\"",
     "seed": "node dist/utils/runSeed.js",
-    "postinstall": "prisma generate",
-    "vercel-build": "echo 'Starting Vercel build...' && prisma generate && echo 'Prisma client generated' && tsc && echo 'TypeScript compiled' && ls -la dist/ && echo 'Files in dist:' && ls -la dist/ && echo 'Vercel build completed!'"
+    "postinstall": "prisma generate", 
+    "vercel-build": "prisma generate && tsc"
   },
   "keywords": [],
   "author": "",
