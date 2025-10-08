@@ -1,29 +1,39 @@
-
-export default async function handler(req, res) {
+export default function handler(req, res) {
     try {
-        console.log('Attempting to import server...');
-        console.log('Process CWD:', process.cwd());
+        // File system kontrolü için require kullan
+        const fs = require('fs');
+        const path = require('path');
         
-        // Dynamic import with error handling
-        const { default: app } = await import('../dist/server.js');
+        const distPath = path.join(process.cwd(), 'dist');
+        const serverPath = path.join(process.cwd(), 'dist', 'server.js');
         
-        console.log('Server imported successfully');
-        console.log('App type:', typeof app);
+        const distExists = fs.existsSync(distPath);
+        const serverExists = fs.existsSync(serverPath);
         
-        if (typeof app === 'function') {
-            return app(req, res);
-        } else {
-            throw new Error('Imported app is not a function');
+        let distFiles = [];
+        if (distExists) {
+            try {
+                distFiles = fs.readdirSync(distPath);
+            } catch (e) {
+                distFiles = [`Error reading directory: ${e.message}`];
+            }
         }
         
-    } catch (error) {
-        console.error('Import Error:', error);
-        
-        return res.status(500).json({
-            error: 'Server import failed',
-            message: error.message,
-            stack: error.stack,
+        return res.status(200).json({
+            message: 'Debug info - File system check',
             cwd: process.cwd(),
+            distExists,
+            serverExists,
+            distFiles,
+            environment: process.env.NODE_ENV,
+            nodeVersion: process.version,
+            timestamp: new Date().toISOString()
+        });
+        
+    } catch (error) {
+        return res.status(500).json({
+            error: 'Debug failed',
+            message: error.message,
             timestamp: new Date().toISOString()
         });
     }
